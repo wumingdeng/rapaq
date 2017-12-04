@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "rapaq server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "czw",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "moment": "^2.19.3",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "node-schedule": "^1.2.5",
+    "request": "^2.83.0",
+    "sequelize": "^4.25.1"
+  }
+}

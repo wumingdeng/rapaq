@@ -1,5 +1,4 @@
-<template>
-<div v-pre class="wrapper">
+<div class="wrapper">
   <div class="mask" style="display: none;"></div>
   <div class="shareMask" data-id="shareMask"></div>
   <div class="authorMask" data-id="authorMask"></div>
@@ -1327,7 +1326,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">4</span> 人追蹤</div>
                       </div>
@@ -1361,7 +1360,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">7</span> 人追蹤</div>
                       </div>
@@ -1396,7 +1395,7 @@
                           圖案設計 、 插畫 、 角色設計
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">11</span> 人追蹤</div>
                       </div>
@@ -1430,7 +1429,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">4</span> 人追蹤</div>
                       </div>
@@ -1464,7 +1463,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">7</span> 人追蹤</div>
                       </div>
@@ -1499,7 +1498,7 @@
                           圖案設計 、 插畫 、 角色設計
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">11</span> 人追蹤</div>
                       </div>
@@ -1533,7 +1532,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000121">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">4</span> 人追蹤</div>
                       </div>
@@ -1567,7 +1566,7 @@
                         <div class="status">
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000266">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">7</span> 人追蹤</div>
                       </div>
@@ -1602,7 +1601,7 @@
                           圖案設計 、 插畫 、 角色設計
                         </div>
                         <div class="action">
-                          <button type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</button>
+                          <btn type="button" class="btn btn--idx btn--follow create_follow" followed_userid="100000267">追蹤</btn>
                         </div>
                         <div class="follower"><span data-id="cnt">11</span> 人追蹤</div>
                       </div>
@@ -2108,45 +2107,3 @@
     </div>
   </div>
 </div>
-</template>
-
-<script>
-	export default {
-	  data () {
-			return {
-				loading: false,
-				html: '',
-				url: "https://qgoods.rapaq.com"
-			}
-	  },
-		methods: {
-			getWeb() {
-				this.$store.dispatch("getShare", {
-					self: this,
-					info:{},
-					callback(self,res) {
-						self.html = res.body
-							var img = document.getElementsByTagName("img")
-							console.log(img.length)
-						self.$nextTick(function () {
-							var img = document.getElementsByTagName("img")
-
-							console.log(img[0].src)
-						})
-						// img[0].src = "../assets/qmaker-graphic.svg"
-					}
-				})
-			},
-			onLoad() {
-				console.log('onload')
-			}
-		},
-		mounted() {
-			// this.getWeb()
-		}
-	}
-</script>
-
-<style>
-	
-</style>

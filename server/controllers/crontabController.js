@@ -20,7 +20,7 @@ function getRapaqWeb() {
             $('a').each(function (idx, element) {
                 var $element = $(element);
                 // $element.attr('src','https://qshare.rapaq.com/img/icons/nav-creat-icon.svg')
-                console.log($element.attr('href'))
+                // console.log($element.attr('href'))
             });
             db.web_pages.update({
                 content: $.html()

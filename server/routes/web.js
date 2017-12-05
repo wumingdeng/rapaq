@@ -11,5 +11,16 @@ web_router.route('/getShare').get(function (req, res) {
 	})
 })
 
+web_router.route('/test').get(function(req, res) {
+    var options={
+        "url":"https://lh3.googleusercontent.com/yQf89HfWzurMhdn-sKFnWVd6iivpCoZN6mAOHYMkvvR8i5g-lDBMp3be4usCyhLELn_YZdt2p45XHCbNfndq7ygY9NM=s560",
+        "method":"get"
+    }
+    console.log('test...')
+    request(options,function(error, response, body){
+    	console.log(error)
+    	res.send(body)
+    })
+})
 
 module.exports = web_router;

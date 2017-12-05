@@ -49,14 +49,14 @@
             </div>
             <ul class="toggle-webs">
                 <li class="toggle-webs__1">
-                    <a href="https://www.rapaq.com" target="_blank" style="color:#fff">
+                    <a href="https://www.rapaq.com" style="color:#fff">
                     <div>RAPAQ</div>
                     <div class="webs__bg"></div>  
                     </a>
                 </li>
                 <li class="toggle-webs__4">
                     <div>
-                        <a href="https://qshare.rapaq.com" target="_blank" style="color:#fff">
+                        <a href="https://qshare.rapaq.com" style="color:#fff">
                         <span>設群</span>
                         <span>・</span>
                         <span>Q’Share</span>
@@ -66,7 +66,7 @@
                 </li>
                 <li class="toggle-webs__2">
                     <div>
-                        <a href="https://qgoods.rapaq.com" target="_blank" style="color:#fff">
+                        <a href="https://qgoods.rapaq.com" style="color:#fff">
                         <span>好物</span>
                         <span>・</span>
                         <span>Q’Goods</span>
@@ -86,7 +86,7 @@
                 </li>
                  <li class="toggle-webs__3">
                     <div>
-                        <a href="http://point.rapaq.com" target="_blank" style="color:#fff">
+                        <a href="http://point.rapaq.com" style="color:#fff">
                         <span>破點</span>
                         <span>・</span>
                         <span>Point</span>
@@ -141,14 +141,14 @@
                         <ul class="swiper-wrapper ">
                             <li class="swiper-slide">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/96" target="_blank">
+                                    <a href="https://qshare.rapaq.com/blog/show/96">
                                         <img src="https://qmaker.rapaq.com/img/article/article_01.png" alt="">
                                     </a>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/96" target="_blank">{{resData.list_title0}}</a>
+                                            <a href="https://qshare.rapaq.com/blog/show/96">{{resData.list_title0}}</a>
                                         </div>
                                     </div>
                                     <div class="list__intro">
@@ -159,14 +159,14 @@
                             </li>
                             <li class="swiper-slide">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/95" target="_blank">
+                                    <a href="https://qshare.rapaq.com/blog/show/95">
                                         <img src="https://qmaker.rapaq.com/img/article/article_02.png" alt="">
                                     </a>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/95" target="_blank">{{resData.list_title1}}</a>
+                                            <a href="https://qshare.rapaq.com/blog/show/95">{{resData.list_title1}}</a>
                                         </div>
                                     </div>
                                     <div class="list__intro">
@@ -176,14 +176,14 @@
                             </li>
                             <li class="swiper-slide">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/97" target="_blank">
+                                    <a href="https://qshare.rapaq.com/blog/show/97">
                                         <img src="https://qmaker.rapaq.com/img/article/article_03.png" alt="">
                                     </a>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/97" target="_blank">{{resData.list_title2}}</a>
+                                            <a href="https://qshare.rapaq.com/blog/show/97">{{resData.list_title2}}</a>
                                         </div>
                                     </div>
                                     <div class="list__intro">
@@ -193,14 +193,14 @@
                             </li>                            
                             <li class="swiper-slide">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/94" target="_blank">
+                                    <a href="https://qshare.rapaq.com/blog/show/94">
                                         <img src="https://qmaker.rapaq.com/img/article/article_04.png" alt="">
                                     </a>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/94" target="_blank">{{resData.list_title3}}</a>
+                                            <a href="https://qshare.rapaq.com/blog/show/94">{{resData.list_title3}}</a>
                                         </div>
                                     </div>
                                     <div class="list__intro">

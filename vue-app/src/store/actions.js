@@ -52,3 +52,22 @@ export function getShare ({commit, state},data) {
       // onErrorRefresh(self);
     });
 }
+
+export function getMaker ({commit, state},data) {
+  var self = data.self;
+  self.$http.get(g.serverAddress+'/api/getMaker',data.info)
+    .then((response) => {
+      // success callback
+      console.log(response)
+      if (data.callback) {
+        data.callback(self,response)
+      }
+      if(response.body.err){
+        // onErrorHandler(response.body.err)
+        // self.$f7.alert('',response.body.err)
+      }     
+    }, (response) => {
+      // error callback
+      // onErrorRefresh(self);
+    });
+}

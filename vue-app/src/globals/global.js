@@ -46,7 +46,8 @@ export default {
   isAndroid:function() {
     return browser.versions.android
   },
-  config: webConfig
+  config: webConfig,
+  isDev:process.env.NODE_ENV === 'development'
 }
 
 export function timeToDate(time,showTime) {

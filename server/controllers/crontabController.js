@@ -4,6 +4,7 @@ var request = require('request')
 // var g = require('../global')
 var moment = require('moment')
 var cheerio = require('cheerio')
+var qmark = require('./rapaqQmark.js');
 
 function getRapaqWeb() {
     var options={
@@ -31,7 +32,9 @@ function getRapaqWeb() {
     })
 }
 
-getRapaqWeb();
+qmark();
+
+// getRapaqWeb();
 //每天3点把超过一天未支付的订单变成自动取消的状态
 // var j = schedule.scheduleJob('0 0 * * * *', function(){
 //     // console.log('定时任务 开')
@@ -49,6 +52,7 @@ var rule2 = "0 * * * * *"
 var getWeb = schedule.scheduleJob(rule2, function(){
     console.log(moment().format('YYYY-MM-DD HH:mm:ss'))
     getRapaqWeb()
+    qmark();
 })
 
 module.exports = schedule

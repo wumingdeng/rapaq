@@ -12,14 +12,14 @@
             <div class="wave__graphic w5"></div>
         </div>
         <div class="rapaq-logo">
-            <img src="../assets/rapaq.svg" alt="">
+            <img src="../../static/img/home/rapaq.svg" alt="">
         </div>
         <div class="rapaq-facebook">
             <a href="https://zh-tw.facebook.com/rapaq/" target="_blank">
-                <div class="rapaq-facebook__fb"><img src="../assets/fb.svg" alt=""></div>
+                <div class="rapaq-facebook__fb"><img src="../../static/img/home/fb.svg" alt=""></div>
                 <div class="rapaq-facebook__keyword">RapaQ - 我的生活，由我設計</div>
                 <div class="rapaq-facebook__search">
-                    <img src="../assets/search.svg" alt="">
+                    <img src="../../static/img/home/search.svg" alt="">
                 </div>
             </a>
         </div>
@@ -45,7 +45,7 @@
               </div>
           </div>
           <div class="qweb__bgimg">
-              <img src="../assets/qshare-graphic.svg" alt="">
+              <img src="../../static/img/home/qshare-graphic.svg" alt="">
           </div>
       </div>
     </transition>
@@ -69,7 +69,7 @@
               </div>
           </div>
           <div class="qweb__bgimg">
-              <img src="../assets/qgoods-graphic.svg" alt="">
+              <img src="../../static/img/home/qgoods-graphic.svg" alt="">
           </div>
       </div>
     </transition>
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="qweb__bgimg">
-            <img src="../assets/qmaker-graphic.svg" alt="">
+            <img src="../../static/img/home/qmaker-graphic.svg" alt="">
         </div>
       </div>
     </transition>
@@ -710,7 +710,7 @@ export default {
 }
 
 .qshare .qweb-main__title {
-  background: url("../assets/title-qshare-default.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qshare-default.svg") 50% 50% no-repeat;
   color: #00d2cd;
 }
 
@@ -734,11 +734,11 @@ export default {
 }
 
 .qshare.is--hover .qweb-main__title {
-  background: url("../assets/title-qshare-hover.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qshare-hover.svg") 50% 50% no-repeat;
 }
 
 .qmaker .qweb-main__title {
-  background: url("../assets/title-qmaker-default.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qmaker-default.svg") 50% 50% no-repeat;
   color: #5a11bd;
 }
 
@@ -762,11 +762,11 @@ export default {
 }
 
 .qmaker.is--hover .qweb-main__title {
-  background: url("../assets/title-qmaker-hover.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qmaker-hover.svg") 50% 50% no-repeat;
 }
 
 .qgoods .qweb-main__title {
-  background: url("../assets/title-qgoods-default.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qgoods-default.svg") 50% 50% no-repeat;
   color: #f7b500;
 }
 
@@ -799,7 +799,7 @@ export default {
 }
 
 .qgoods.is--hover .qweb-main__title {
-  background: url("../assets/title-qgoods-hover.svg") 50% 50% no-repeat;
+  background: url("../../static/img/home/title-qgoods-hover.svg") 50% 50% no-repeat;
 }
 
 .notify {
@@ -827,7 +827,7 @@ export default {
   top: 0px;
   right: 0px;
   cursor: pointer;
-  /*background: transparent url("../assets/icon-noti.svg") 50% 50% no-repeat;*/
+  /*background: transparent url("../../static/img/home/icon-noti.svg") 50% 50% no-repeat;*/
 }
 
 .notify-text {
@@ -904,7 +904,7 @@ export default {
 .notify.is--click .notify-icon {
   top: 20px;
   right: 20px;
-  /*background: transparent url("../assets/icon-close.svg") 50% 50% no-repeat;*/
+  /*background: transparent url("../../static/img/home/icon-close.svg") 50% 50% no-repeat;*/
 }
 
 .notify.is--click .notify-text {

@@ -1,17 +1,13 @@
-var point_menu = false;
-var point_member = false;
-var point_notify = false;
-var point_creat = false;
-var menuClick = false;
-    //nav
-    // $('.nav-load').load('components/nav.html');
+    var a = false, b = false;
+	
+	//nav
+	$('.nav-load').load('/nav');
     var didScrollID = setTimer();
     var didScroll = false,
         lastScrollTop = 0,
         delta = 120,
-        Wheight = $(window).height(),
+        Wheight = $(window).height();
         Wwidth = $(window).width();
-        
     $(window).resize(function () {
         Wheight = $(window).height();
         Wwidth = $(window).width();
@@ -25,88 +21,148 @@ var menuClick = false;
         }, 500);
         return i;
    }
-
-   function ifStepShow() {
-        if($('.nav').hasClass('is-hide')){
-            $('.stepFixed').removeClass('navShow');
-        }else {
-            $('.stepFixed').addClass('navShow');
-        }
-    }
     
     $(window).scroll(function (event) {
-        if( point_member == false && point_menu == false  && point_creat == false  && point_notify == false){
+        if( a == false && b == false){
             didScroll = true;
         }
     });
 
-
-    ifStepShow();
-
-    // var divFixTop = $(".classify, .page-header, .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage");
-    // var divFixZero = $(".classify, .whitebg, .page-header, .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage");
-    var divFixTop = $('.classify, [data-id="js-pageHeader"], .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage');
-    var divFixZero = $('.classify, .whitebg, [data-id="js-pageHeader"], .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage');
-    var easyElTop = $(".pageEasy-header-infoMove, .pageEasy-header__action");//
-    var easyElZero = $(".pageEasy-header-infoMove, .pageEasy-header__action");//
     function hasScrolled() {
         clearInterval(didScrollID);
         var st = $(this).scrollTop();
         var $Tbottom = $(document).height() - Wheight - 120;
         if (st > lastScrollTop && st > Wheight){
             $('.nav').removeClass('is-active').addClass('is-hide');
-            divFixZero.addClass('is--zero');
-            easyElZero.addClass('is--zero');//
-            $(".sharestyle, .page-header-more").addClass('is--scroll');
+            $('.nav-index').removeClass('nav-index--click');
+            
             if ( st > $Tbottom ) {
                 $('.nav').removeClass('is-hide').addClass('is-active');
-                divFixZero.removeClass('is--zero');
-                easyElZero.removeClass('is--zero');//
+                $('.nav-index').removeClass('nav-index--click');
+                
             }
         } else {
             if(st + Wheight < $(document).height()) {
                 $('.nav').removeClass('is-hide').addClass('is-active');
-                divFixZero.removeClass('is--zero');
-                easyElZero.removeClass('is--zero');//
+                
             }
         }
-
-        ifStepShow();
-        
-        if($('.nav').hasClass('is-hide')){
-            $('.stepFixed').removeClass('navShow');
-        }else {
-            $('.stepFixed').addClass('navShow');
-        }
-        
-        if (st > 300) {
-            divFixTop.addClass('is--fixedtop');//
-            easyElTop.addClass('is--fixedtop');//
-            $('.pageEasy-header__info').css('padding-bottom','83px');//
-            $(".sharestyle, .page-header-more").addClass('is--scroll');
-            $(".mask-z").addClass('is--z6');
-            var pageHeaderInfoHeight=$('.is--fixedtop .page-header__info').outerHeight(true);
-            $('.whitebg').stop(true,false).animate({height: pageHeaderInfoHeight+40},0).fadeIn(100);
-            $('.whitebg-r').stop(true,false).animate({height:0},0).animate({ height:59},100).fadeIn(100);
+        if (st < $(".nav-content").height()) {
+            $('.nav-index').addClass('nav-index--click');
+            $('.mainbar-aside-search input').removeClass('is--focus');
         } else {
-            divFixTop.removeClass('is--fixedtop');//
-            easyElTop.removeClass('is--fixedtop');//
-             $('.pageEasy-header__info').css('padding-bottom','20px');//
-            $('.whitebg').stop(true,false).fadeOut(100);
-            $('.whitebg-r').stop(true,false).animate({height:59},0).animate({height:0},100).fadeOut(100);
-            $(".sharestyle, .page-header-more").removeClass('is--scroll');
-            $(".mask-z").removeClass('is--z6');
+            $('.nav-index').removeClass('nav-index--click');
         }
+        
         lastScrollTop = st;
         didScrollID = setTimer();
     }
-    
-    //footer
-    // $('.footer-load').load('components/footer.html');
-    $('.footer-trigger').click(function(){
-        $(".footer-load").slideToggle(500);
+   
+	//footer
+	$('.footer-load').load('/footer');
+    $('.footer-trigger').click(function(){              
+        $(".footer-load").slideToggle(500); 
         $(".footer-trigger__icon").toggleClass("is--active");
+
     });
 
     //copyright
-    // $('.footer-cy').load('components/copyright.html');
+    $('.footer-cy').load('/components/copyright.html');
+
+    //like toggle
+    $('.list__like').click(function(){
+        $(this).toggleClass('is--active');
+    });
+    $('.list__share').click(function(){
+        $(this).toggleClass('is--active');
+    });
+
+    
+    //intro text limit
+    var len1 = 150;
+    var len2 = 120;
+    var len3 = 85;
+    $(".issue__intro").each(function(i){
+        if($(this).text().length>len1){
+            $(this).attr("title",$(this).text());
+            var text=$(this).text().substring(0,len1-1)+"...";
+            $(this).text(text);
+        }
+    });
+    $(".focus__intro").each(function(i){
+        if($(this).text().length>len2){
+            $(this).attr("title",$(this).text());
+            var text=$(this).text().substring(0,len2-1)+"...";
+            $(this).text(text);
+        }
+    });
+    $(".list__intro").each(function(i){
+        if($(this).text().length>len3){
+            $(this).attr("title",$(this).text());
+            var text=$(this).text().substring(0,len3-1)+"...";
+            $(this).text(text);
+        }
+    });
+	
+
+    /* 
+        Load more content with jQuery - May 21, 2013
+        (c) 2013 @ElmahdiMahmoud
+    */
+    // $(".s-plan-list > li").hide();
+    // $(".s-plan-list > li").slice(0, 12).show();
+    // $("#s-loadmore").on('click', function (e) {
+    //     e.preventDefault();
+    //     $(".s-plan-list > li:hidden").slice(0, 3).slideDown();
+    //     if ($(".s-plan-list > li:hidden").length == 0) {
+    //         $("#s-loadmore").fadeOut(500);
+    //     }
+    //     $('html,body').animate({
+    //         scrollTop: $(this).offset().top-20
+    //     }, 1500);
+    // });
+    var $collect = $(".m-plan-collect .m-plan-list > li");  
+    $collect.hide();
+    $collect.slice(0, 6).show();
+    $("#m-collect-loadmore").on('click', function (e) {
+        e.preventDefault();
+        $(".m-plan-collect .m-plan-list > li:hidden").slice(0, 3).slideDown();
+        if ($(".m-plan-collect .m-plan-list > li:hidden").length == 0) {
+            $("#m-collect-loadmore").fadeOut(500);
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top-20
+        }, 1500);
+    });
+    //select effect
+    $('.select-vb').click(function(){
+        $(this).find('ul').slideToggle(10);
+        $(this).find('span').toggleClass('is--select');
+        $(this).parent().siblings().find('ul').hide().siblings().removeClass('is--select');
+    });
+    $('.select-wh').click(function(){
+        $(this).find('ul').slideToggle(10);
+        $(this).find('span').toggleClass('is--select');
+    });
+    $(document).mouseup(function (e){
+        var $option = $('.select').find('ul');
+        if ($option.has(e.target).length === 0)
+        {
+            $option.hide().siblings().removeClass('is--select');                
+        }
+    });
+    $('.select ul li').click(function(){
+        var str = "";
+        $(this).each(function() {
+          str += $( this ).text() + " ";
+        });
+        $(this).parent().siblings().text( str );
+        $('.select-wh ul li').parent().siblings().text( str ).css('color','#666666');
+    })
+
+     //like btn unlock 
+   $('.m-plan-list .list__like').click(function(){
+    $(this).toggleClass('is--dislike');
+   });
+
+

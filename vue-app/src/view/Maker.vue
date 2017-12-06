@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="mainbar-aside">
-                <div class="mainbar-aside__click">                    
+                <div class="mainbar-aside__click">              
                     <div class="click-close">
                         <span class="click-close__left"></span>
                         <span class="click-close__right"></span>
@@ -97,11 +97,9 @@
             </ul>
         </div>
         <ul class="nav-content-mtoggle is--hide">
-             
                 <li><a href="https://qmaker.rapaq.com/login">登入</a></li>
                     </ul>
     </div>
-
             </div>
         </nav>
         <div class="wrapper-index">
@@ -475,8 +473,11 @@
         </div>
         </div>
 </template>
-
 <script>
+require('../../static/js/nav.js')
+require('../../static/js/maker/jquery.js')
+require('../../static/js/maker/mousewheel.min.js')
+require('../../static/js/maker/swiper.js')
 export default {
   name: "HelloWorld",
   data() {
@@ -484,28 +485,25 @@ export default {
       msg: "Welcome to Your Vue.js App",
       curDom: {},
       banner01:
-        (window.Global.isDev ? "static/" : "") + "maker/img/banner01.jpg",
+        (window.Global.isDev ? "static/" : "") + "img/maker/banner01.jpg",
       banner02:
-        (window.Global.isDev ? "static/" : "") + "maker/img/banner02.jpg",
+        (window.Global.isDev ? "static/" : "") + "img/maker/banner02.jpg",
       banner03:
-        (window.Global.isDev ? "static/" : "") + "maker/img/banner03.jpg",
+        (window.Global.isDev ? "static/" : "") + "img/maker/banner03.jpg",
       resData: {}
     };
   },
   methods: {
     alertDismissed() {
-      // do something
     },
     onAlert() {
       navigator.notification.alert("Cordova is ready");
     },
-
     getWeb() {
       this.$store.dispatch("getMaker", {
         self: this,
         info: {},
         callback(self, res) {
-          console.log(res.body);
           self.resData = res.body;
         }
       });
@@ -520,6 +518,28 @@ export default {
       loop: true,
       autoplay: 3000
     });
+
+    //swiper-funding
+    var swiperCart = new Swiper('.funding-focus', {
+        nextButton: '.focusNext',
+        prevButton: '.focusPrev',
+        centeredSlides: true,
+        autoplay: 5000
+    });
+    //swiper-project
+    var swiperCart = new Swiper('.project-list', {
+        nextButton: '.projectNext',
+        prevButton: '.projectPrev',
+        slidesPerView: 2,
+        spaceBetween: 20,
+        breakpoints: {
+            414: {
+                slidesPerView: 1,
+                spaceBetweenSlides: 0
+            }
+        }
+    });
+
     this.getWeb();
   }
 };
@@ -527,10 +547,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/**
 @import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/sweetalert2.css);
 @import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/helper.css);
 @import url(https://qmaker.rapaq.com/css/base.css);
+@import url(https://qmaker.rapaq.com/css/layout.css);
 @import url(https://qmaker.rapaq.com/css/search.css);
 @import url(https://qmaker.rapaq.com/css/QMaker.css);
 @import url(https://qmaker.rapaq.com/css/vendors/swiper.min.css);
+*/
+
+@import '../../static/css/maker/base.css';
+@import '../../static/css/maker/search.css';
+@import '../../static/css/maker/swiper.css';
+@import '../../static/css/maker/sweetalert2.css';
+@import '../../static/css/maker/QMaker.css';
+@import '../../static/css/maker/helper.css';
+@import '../../static/css/maker/layout.css';
+
 </style>

@@ -530,8 +530,7 @@ export default {
 @import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/sweetalert2.css);
 @import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/helper.css);
 @import url(https://qmaker.rapaq.com/css/base.css);
-@import url(https://qmaker.rapaq.com/css/layout.css?v=1.1);
 @import url(https://qmaker.rapaq.com/css/search.css);
-@import url(https://qmaker.rapaq.com/css/QMaker.css?171031);
-@import url(https://qmaker.rapaq.com/css/vendors/swiper.min.css?171031);
+@import url(https://qmaker.rapaq.com/css/QMaker.css);
+@import url(https://qmaker.rapaq.com/css/vendors/swiper.min.css);
 </style>

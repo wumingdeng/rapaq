@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "css-loader": "^0.28.7",
     "jquery": "^3.2.1",
     "vue": "^2.5.2",
     "vue-cordova": "^0.1.2",

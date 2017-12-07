@@ -165,7 +165,7 @@ section .section-wrap img {
 
 .default-pic {
   width: 100%;
-  background: #f2f2f2 url("../img/icons/default-pic.svg") 50% 50% no-repeat;
+  background: #f2f2f2 url("/static/img/icons/default-pic.svg") 50% 50% no-repeat;
 }
 
 .btn-style-big, .btn-style-small {
@@ -297,11 +297,11 @@ section .section-wrap img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
-  background: #fff url("../img/icons/share-copy.svg") 50% 50% no-repeat;
+  background: #fff url("/static/img/icons/share-copy.svg") 50% 50% no-repeat;
 }
 
 .sharestyle .sharestyle-center .share-href__copy:hover, .sharestyle .sharestyle-center .share-href__copy:active {
-  background: #ddd url("../img/icons/share-copy-w.svg") 50% 50% no-repeat;
+  background: #ddd url("/static/img/icons/share-copy-w.svg") 50% 50% no-repeat;
 }
 
 .sharestyle .sharestyle-center .share-href__input {
@@ -635,7 +635,7 @@ section .section-wrap img {
 }
 
 .report-reason__check label.label-report {
-  background-image: url("../img/icons/radiobox.png");
+  background-image: url("/static/img/icons/radiobox.png");
   background-size: 26px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -892,7 +892,7 @@ section .section-wrap img {
   padding-left: 42px;
   width: 100%;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.94) url("../img/icons/warning.svg") 14px center no-repeat;
+  background: rgba(255, 255, 255, 0.94) url("/static/img/icons/warning.svg") 14px center no-repeat;
 }
 
 .claim-inList-b {
@@ -1142,24 +1142,24 @@ div.select ul > li:hover {
 
 .select-mc span {
   color: #fff;
-  background: url("../img/icons/select.png") no-repeat scroll right center transparent;
+  background: url("/static/img/icons/select.png") no-repeat scroll right center transparent;
 }
 
 .select-wh span {
   color: #ddd;
-  background: url("../img/icons/select2.png") no-repeat scroll right center transparent;
+  background: url("/static/img/icons/select2.png") no-repeat scroll right center transparent;
 }
 
 .select-gr span {
   color: #666;
-  background: url("../img/icons/select3.png") no-repeat scroll right center transparent;
+  background: url("/static/img/icons/select3.png") no-repeat scroll right center transparent;
   border-color: #666;
 }
 
 .is--select {
   background-color: #00d2cd !important;
   color: #fff !important;
-  background-image: url("../img/icons/select.png") !important;
+  background-image: url("/static/img/icons/select.png") !important;
 }
 
 .page-empty {

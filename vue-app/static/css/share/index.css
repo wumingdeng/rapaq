@@ -169,7 +169,7 @@
               margin-top: 7px;
               width: 7px;
               height: 7px;
-              background-image: url(../img/icons/icon-moreArrow.png);
+              background-image: url(/static/img/icons/icon-moreArrow.png);
               background-size: 7px 14px; }
             .square__content .info__author .name.name--multiple.on:after {
               background-position: 0 -7px; }
@@ -235,7 +235,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    background-image: url(../img/icons/icon-close.png);
+    background-image: url(/static/img/icons/icon-close.png);
     background-position: 0 -160px;
     background-size: 40px 200px;
     position: absolute;
@@ -700,7 +700,7 @@
             vertical-align: baseline;
             width: 7px;
             height: 7px;
-            background-image: url(../img/icons/icon-moreArrow.png);
+            background-image: url(/static/img/icons/icon-moreArrow.png);
             background-size: 7px 14px; }
         .promo__item .info__bottom .author__info .date {
           font-size: 10px;
@@ -1165,12 +1165,12 @@
   right: 22px;
   bottom: 26px;
   cursor: pointer;
-  background-image: url(../img/icons/like.svg);
+  background-image: url(/static/img/icons/like.svg);
   background-position: 50% 50%;
   background-size: 26px 26px;
   background-repeat: no-repeat; }
   .icon__like.is--active {
-    background-image: url(../img/icons/like--active.svg); }
+    background-image: url(/static/img/icons/like--active.svg); }
 
 .btn {
   cursor: pointer;
@@ -1209,7 +1209,7 @@
       display: inline-block;
       width: 10px;
       height: 10px;
-      background-image: url(../img/icons/arrow-more.png);
+      background-image: url(/static/img/icons/arrow-more.png);
       background-size: 10px;
       margin-left: 8px;
       vertical-align: baseline; }
@@ -1282,7 +1282,7 @@
   position: static;
   display: inline-block;
   vertical-align: bottom;
-  background-image: url(../img/swiper-navigation.png);
+  background-image: url(/static/img/swiper-navigation.png);
   background-repeat: no-repeat;
   background-size: 40px 80px;
   margin: 0 10px; }

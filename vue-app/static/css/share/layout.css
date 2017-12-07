@@ -69,7 +69,7 @@
   position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background: url("../../img/icons/nav-logo-b.png") 0% 50% no-repeat;
+  background: url("/static/img/icons/nav-logo-b.png") 0% 50% no-repeat;
   background-size: 100% auto;
   width: 141px;
   height: 60px;
@@ -83,7 +83,7 @@
     height: 60px;
     display: block;
     width: 50%;
-    background: url("../../img/icons/nav-logo-b.svg") 50% 50% no-repeat;
+    background: url("/static/img/icons/nav-logo-b.svg") 50% 50% no-repeat;
     margin-top: 0px;
   }
 }
@@ -141,7 +141,7 @@
 .nav-content-mainbar .mainbar-aside__click .click-menubtn {
   width: 20px;
   height: 20px;
-  background: url("../../img/icons/nav-three-b.svg") no-repeat;
+  background: url("/static/img/icons/nav-three-b.svg") no-repeat;
   margin-left: -2px;
 }
 
@@ -265,7 +265,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url("../../img/icons/nav-search-b.svg") right center no-repeat;
+  background: transparent url("/static/img/icons/nav-search-b.svg") right center no-repeat;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -315,7 +315,7 @@
   right: 60px;
   width: 60px;
   border-left: 1px solid #d8d8d8;
-  background: url("../../img/icons/notification.svg") 50% 20px no-repeat;
+  background: url("/static/img/icons/notification.svg") 50% 20px no-repeat;
 }
 
 .nav-content-mainbar .mainbar-aside-notify a {
@@ -330,7 +330,7 @@
   width: 60px;
   height: 59px;
   border-left: 1px solid #d8d8d8;
-  background: url("../../img/icons/nav-member-b.svg") 50% 50% no-repeat;
+  background: url("/static/img/icons/nav-member-b.svg") 50% 50% no-repeat;
 }
 
 .nav-content-mainbar .mainbar-aside-login a {
@@ -444,7 +444,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: url("../../img/icons/nav-search-b.svg") right center no-repeat;
+  background: url("/static/img/icons/nav-search-b.svg") right center no-repeat;
   position: absolute;
   top: 28px;
   right: 28px;
@@ -608,23 +608,23 @@
 }
 
 .nav-content-toggle .toggle-webs .toggle-webs__1 .webs__bg {
-  background-image: url("../../img/rapaq.jpg");
+  background-image: url("/static/img/rapaq.jpg");
 }
 
 .nav-content-toggle .toggle-webs .toggle-webs__2 .webs__bg {
-  background-image: url("../../img/qgoods.jpg");
+  background-image: url("/static/img/qgoods.jpg");
 }
 
 .nav-content-toggle .toggle-webs .toggle-webs__3 .webs__bg {
-  background-image: url("../../img/point.jpg");
+  background-image: url("/static/img/point.jpg");
 }
 
 .nav-content-toggle .toggle-webs .toggle-webs__4 .webs__bg {
-  background-image: url("../../img/qshare.jpg");
+  background-image: url("/static/img/qshare.jpg");
 }
 
 .nav-content-toggle .toggle-webs .toggle-webs__5 .webs__bg {
-  background-image: url("../../img/qmaker.jpg");
+  background-image: url("/static/img/qmaker.jpg");
 }
 
 .nav-content-toggle .toggle-webs:after {
@@ -1216,7 +1216,7 @@ li.logout a {
   margin: 0 auto;
   position: relative;
   font-family: 'Prompt', sans-serif;
-  background: url("../../img/icons/footer-logo.png") 0 0 no-repeat;
+  background: url("/static/img/icons/footer-logo.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 
@@ -1334,19 +1334,19 @@ li.logout a {
 }
 
 .footer-content-common .common-community .communtity__fb {
-  background: url("../../img/icons/fb.svg") 0 0 no-repeat;
+  background: url("/static/img/icons/fb.svg") 0 0 no-repeat;
 }
 
 .footer-content-common .common-community .communtity__ig {
-  background: url("../../img/icons/ig.svg") 0 0 no-repeat;
+  background: url("/static/img/icons/ig.svg") 0 0 no-repeat;
 }
 
 .footer-content-common .common-community .communtity__as {
-  background: url("../../img/icons/applestore.svg") 0 0 no-repeat;
+  background: url("/static/img/icons/applestore.svg") 0 0 no-repeat;
 }
 
 .footer-content-common .common-community .communtity__gp {
-  background: url("../../img/icons/googleplay.svg") 0 0 no-repeat;
+  background: url("/static/img/icons/googleplay.svg") 0 0 no-repeat;
 }
 
 @media only screen and (max-width: 768px) {

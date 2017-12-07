@@ -323,7 +323,7 @@ body.check-dock--docking .c-action--animate {
     top: 50%;
     margin-top: -20px;
     right: 0;
-    background-image: url(../img/icons/icon-close.png);
+    background-image: url(/static/icons/icon-close.png);
     background-size: 40px 200px; }
     .create_icon-delete-gray {
       background-position: 0 0; }
@@ -337,7 +337,7 @@ body.check-dock--docking .c-action--animate {
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url(../img/icons/icon-editpic.png);
+    background-image: url(/static/icons/icon-editpic.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px; }
@@ -446,7 +446,7 @@ body.check-dock--docking .c-action--animate {
   width: 100%; }
   .ipt--datepicker {
     padding-right: 40px;
-    background-image: url(../img/icons/control-dropdown.png);
+    background-image: url(/static/icons/control-dropdown.png);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 40px; }
@@ -533,18 +533,18 @@ body.check-dock--docking .c-action--animate {
     -ms-transform: scale(0.85);
     transform: scale(0.85); }
   .preview-header-icons .icons__save {
-    background: transparent url("../img/icons/icon-save.svg") 50% 50% no-repeat; }
+    background: transparent url("/static/icons/icon-save.svg") 50% 50% no-repeat; }
     .preview-header-icons .icons__save.is--active {
-      background: transparent url("../img/icons/icon-save--active.svg") 50% 50% no-repeat; }
+      background: transparent url("/static/icons/icon-save--active.svg") 50% 50% no-repeat; }
   .preview-header-icons .icons__share {
-    background: transparent url("../img/icons/icon-share.svg") 50% 50% no-repeat; }
+    background: transparent url("/static/icons/icon-share.svg") 50% 50% no-repeat; }
     .preview-header-icons .icons__share.is--active {
-      background: transparent url("../img/icons/icon-share--active.svg") 50% 50% no-repeat; }
+      background: transparent url("/static/icons/icon-share--active.svg") 50% 50% no-repeat; }
   .preview-header-icons .icons__edit {
     margin-right: 0;
-    background: transparent url("../img/icons/icon-edit.svg") 50% 50% no-repeat; }
+    background: transparent url("/static/icons/icon-edit.svg") 50% 50% no-repeat; }
     .preview-header-icons .icons__edit.is--active {
-      background: transparent url("../img/icons/icon-edit--active.svg") 50% 50% no-repeat; }
+      background: transparent url("/static/icons/icon-edit--active.svg") 50% 50% no-repeat; }
   .preview-header:after {
     clear: both;
     content: "";
@@ -633,9 +633,9 @@ body.check-dock--docking .c-action--animate {
       right: 0;
       width: 26px;
       height: 26px;
-      background: url("../img/icons/multiple-click-down.svg") no-repeat; }
+      background: url("/static/icons/multiple-click-down.svg") no-repeat; }
       .preview-inner-multiple__click.is--click {
-        background: url("../img/icons/multiple-click-up.svg") no-repeat; }
+        background: url("/static/icons/multiple-click-up.svg") no-repeat; }
     .preview-inner-multiple-box {
       float: left;
       width: 31.91489%;
@@ -942,11 +942,11 @@ body.check-dock--docking .c-action--animate {
           display: block;
           margin-top: 6px; } }
   .preview-information-time {
-    background: transparent url("../img/icons/act-time.svg") 20px 50% no-repeat; }
+    background: transparent url("/static/icons/act-time.svg") 20px 50% no-repeat; }
   .preview-information-location {
-    background: transparent url("../img/icons/act-location.svg") 20px 50% no-repeat; }
+    background: transparent url("/static/icons/act-location.svg") 20px 50% no-repeat; }
   .preview-information-organizer {
-    background: transparent url("../img/icons/act-organizer.svg") 20px 50% no-repeat; }
+    background: transparent url("/static/icons/act-organizer.svg") 20px 50% no-repeat; }
     .preview-information-organizer span.organizer {
       color: #2e2e2e !important; }
 
@@ -985,7 +985,7 @@ body.check-dock--docking .c-action--animate {
     display: block;
     width: 40px;
     height: 40px;
-    background-image: url(../img/icons/icon-close.png);
+    background-image: url(/static/icons/icon-close.png);
     background-position: 0 -120px;
     background-size: 40px 200px;
     position: absolute;
@@ -1179,7 +1179,7 @@ body.check-dock--docking .c-action--animate {
       display: block;
       width: 40px;
       height: 40px;
-      background-image: url(../img/icons/icon-close.png);
+      background-image: url(/static/icons/icon-close.png);
       background-position: 0 -80px;
       background-size: 40px 200px; }
   .previewLink_result .image {
@@ -1224,7 +1224,7 @@ body.check-dock--docking .c-action--animate {
       margin-left: -8px;
       width: 16px;
       height: 10px;
-      background-image: url(../img/icons/arrow-triangle.png);
+      background-image: url(/static/icons/arrow-triangle.png);
       background-size: 16px 10px; }
     .publish_to .switch:after {
       content: '';
@@ -1232,7 +1232,7 @@ body.check-dock--docking .c-action--animate {
       vertical-align: middle;
       width: 21px;
       height: 21px;
-      background-image: url(../img/icons/control-toggle.png);
+      background-image: url(/static/icons/control-toggle.png);
       background-position: 0 0;
       background-size: 21px 42px; }
     .publish_to .switch.on {
@@ -1276,7 +1276,7 @@ body.check-dock--docking .c-action--animate {
   width: 26px;
   height: 26px;
   cursor: pointer;
-  background-image: url(../img/icons/radio.png);
+  background-image: url(/static/icons/radio.png);
   background-size: 26px 52px; }
   .trans-element-radio.unchecked {
     background-position: 0 0; }
@@ -1317,7 +1317,7 @@ body.check-dock--docking .c-action--animate {
         right: 0;
         top: 50%;
         margin-top: -20px;
-        background-image: url(../img/icons/control-dropdown.png);
+        background-image: url(/static/icons/control-dropdown.png);
         background-size: 40px; }
     .transformSelect > li.open > span {
       border-radius: 4px 4px 0 0; }
@@ -1417,7 +1417,7 @@ body.check-dock--docking .c-action--animate {
 .bootstrap-datetimepicker-widget table td span {
   background-color: #fff; }
   .bootstrap-datetimepicker-widget table td span.i_timepicker {
-    background-image: url(../img/icons/control-timepicker.png);
+    background-image: url(/static/icons/control-timepicker.png);
     background-size: 108px; }
     .bootstrap-datetimepicker-widget table td span.i_timepicker-up {
       background-position: 0 0; }
@@ -1468,7 +1468,7 @@ body.check-dock--docking .c-action--animate {
   width: 16px;
   height: 16px;
   margin: 0 auto;
-  background-image: url(../img/icons/control-datepicker.png);
+  background-image: url(/static/icons/control-datepicker.png);
   background-size: 16px 32px; }
   .i_datepicker-left {
     background-position: 0 0; }
@@ -1585,12 +1585,12 @@ body.check-dock--docking .c-action--animate {
     display: block;
     padding-top: 100%; }
   .previewUploadBox--video .previewUploadBox__mask {
-    background-image: url(../img/icons/icon-filetype-video.png);
+    background-image: url(/static/icons/icon-filetype-video.png);
     background-repeat: no-repeat;
     background-position: center center; }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 144dpi) {
       .previewUploadBox--video .previewUploadBox__mask {
-        background-image: url(../img/icons/icon-filetype-video@3x.png);
+        background-image: url(/static/icons/icon-filetype-video@3x.png);
         background-size: 32px; } }
   .previewUploadBox__file {
     position: absolute;
@@ -1621,10 +1621,10 @@ body.check-dock--docking .c-action--animate {
       width: 40px;
       height: 40px;
       cursor: pointer;
-      background-image: url(../img/icons/icon-delfile.png); }
+      background-image: url(/static/icons/icon-delfile.png); }
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 144dpi) {
         .previewUploadBox__mask .delIcon {
-          background-image: url(../img/icons/icon-delfile@3x.png);
+          background-image: url(/static/icons/icon-delfile@3x.png);
           background-size: 40px; } }
   .previewUploadBox.oversized {
     border: 2px solid #ff3244; }
@@ -1685,10 +1685,10 @@ body.check-dock--docking .c-action--animate {
   .icon__upload:before, .icon__upload:after {
     width: 40px;
     height: 30px;
-    background-image: url(../img/icons/icon-upload.png); }
+    background-image: url(/static/icons/icon-upload.png); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 144dpi) {
       .icon__upload:before, .icon__upload:after {
-        background-image: url(../img/icons/icon-upload@3x.png);
+        background-image: url(/static/icons/icon-upload@3x.png);
         background-size: 80px 60px; } }
   .icon__upload--image:before, .icon__upload--image:after {
     background-position: 0 0; }

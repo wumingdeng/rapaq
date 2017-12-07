@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css?family=Prompt:100,200,300");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400");
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.lds-spinner {
+    position: relative;
+}
+
+.lds-spinner div {
+    left: 0;
+    top: 0;
+    position: absolute;
+    -webkit-animation: lds-spinner linear 1s infinite;
+    animation: lds-spinner linear 1s infinite;
+    background: #5a11bd;
+    width: 5px;
+    height: 16px;
+    border-radius: 20px;
+    -webkit-transform-origin: 5px 49px;
+    -ms-transform-origin: 3px 30px;
+    transform-origin: 3px 30px;
+}
+
+.lds-spinner div:nth-child(1) {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-animation-delay: -0.875s;
+    animation-delay: -0.875s;
+}
+
+.lds-spinner div:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-animation-delay: -0.75s;
+    animation-delay: -0.75s;
+}
+
+.lds-spinner div:nth-child(3) {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-animation-delay: -0.625s;
+    animation-delay: -0.625s;
+}
+
+.lds-spinner div:nth-child(4) {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(5) {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-animation-delay: -0.375s;
+    animation-delay: -0.375s;
+}
+
+.lds-spinner div:nth-child(6) {
+    -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s;
+}
+
+.lds-spinner div:nth-child(7) {
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    -webkit-animation-delay: -0.125s;
+    animation-delay: -0.125s;
+}
+
+.lds-spinner div:nth-child(8) {
+    -webkit-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg);
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.lds-spinner {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.lds-txt {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2e2e2e;
+}
+
+.swal2-modal .swal2-title {
+    color: #2e2e2e;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    margin: 20px 0 6px;
+    padding: 0;
+    line-height: 1.5;
+    display: block;
+}
+
+.swal2-modal .swal2-content {
+    color: #929292;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    text-align: inherit;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.swal2-modal .swal2-buttonswrapper {
+    margin-top: 40px;
+}
+
+.sa-rapaq {
+    border-radius: 0;
+}
+
+.sa-rapaq button {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sa-rapaq .swal2-input {
+    border: 1px solid #ddd;
+}
+
+.sa-rapaq .swal2-input:focus {
+    border-color: #5a11bd;
+    box-shadow: none;
+}
+
+.sa-rapaq .swal2-input.swal2-inputerror {
+    box-shadow: none !important;
+}
+
+.sa-rapaq .swal2-input.swal2-inputerror:focus {
+    border-color: #ff3244;
+}
+
+.sa-rapaq-confirm {
+    background-color: #5a11bd;
+}
+
+.sa-rapaq-confirm:hover {
+    background-color: #5a11bd;
+}
+
+.sa-rapaq-confirm.disabled {
+    background-color: #ddd;
+}
+
+.sa-rapaq-confirm.disabled:hover {
+    background-color: #ddd;
+}
+
+.sa-rapaq-confirm.loading:after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -3px;
+    vertical-align: middle;
+    height: 10px;
+    width: 10px;
+    border: 3px solid #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+    animation: rotate-loading 1.5s linear 0s infinite normal;
+}
+
+.sa-rapaq-confirm.confirm--mc {
+    background-color: #5a11bd;
+}
+
+.sa-rapaq-confirm.confirm--mc:hover {
+    background-color: #5a11bd;
+}
+
+.sa-rapaq-confirm.confirm--red {
+    background-color: #ff3244;
+}
+
+.sa-rapaq-confirm.confirm--red:hover {
+    background-color: #ff3244;
+}
+
+.sa-rapaq-cancel {
+    background-color: #2e2e2e;
+}
+
+.sa-rapaq-delete {
+    background-color: #ff3244;
+}
+
+.sa-rapaq.single-btn button {
+    width: 100%;
+}
+
+.sa-rapaq.double-btn .swal2-buttonswrapper {
+    overflow: hidden;
+}
+
+.sa-rapaq.double-btn button {
+    width: calc(50% - 10px);
+}
+
+.sa-rapaq.double-btn button.sa-rapaq-confirm {
+    float: right;
+    margin-left: 10px;
+}
+
+.sa-rapaq.double-btn button.sa-rapaq-cancel {
+    float: left;
+    margin-right: 10px;
+}
+
+.sa-rapaq.no-btn .swal2-title {
+    margin: 0;
+}
+
+.sa-rapaq .swal2-validationerror+.swal2-buttonswrapper {
+    margin-top: 20px;
+}
+
+.sa-rapaq .swal2-validationerror[style*="display: none"]+.swal2-buttonswrapper {
+    margin-top: 40px;
+}
+
+.sa-rapaq .swal2-icon.swal2-success {
+    border-color: #5a11bd;
+}
+
+.sa-rapaq .swal2-icon.swal2-success [class^='swal2-success-line'] {
+    background-color: #5a11bd;
+}

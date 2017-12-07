@@ -58,7 +58,6 @@ export function getMaker ({commit, state},data) {
   self.$http.get(g.serverAddress+'/api/getMaker',data.info)
     .then((response) => {
       // success callback
-      console.log(response)
       if (data.callback) {
         data.callback(self,response)
       }

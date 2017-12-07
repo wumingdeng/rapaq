@@ -1,62 +1,62 @@
     var a = false, b = false;
 	
-	//nav
-	$('.nav-load').load('/nav');
-    var didScrollID = setTimer();
+    var didScrollID;
     var didScroll = false,
         lastScrollTop = 0,
         delta = 120,
         Wheight = $(window).height();
         Wwidth = $(window).width();
-    $(window).resize(function () {
-        Wheight = $(window).height();
-        Wwidth = $(window).width();
-    });
-    function setTimer(){
-        i = setInterval(function(){
-            if (didScroll) {
-                hasScrolled();
-                didScroll = false;
-            }
-        }, 500);
-        return i;
-   }
+	// //nav
+	// $('.nav-load').load('/nav');
+ //    $(window).resize(function () {
+ //        Wheight = $(window).height();
+ //        Wwidth = $(window).width();
+ //    });
+ //    function setTimer(){
+ //        i = setInterval(function(){
+ //            if (didScroll) {
+ //                hasScrolled();
+ //                didScroll = false;
+ //            }
+ //        }, 500);
+ //        return i;
+ //   }
     
-    $(window).scroll(function (event) {
-        if( a == false && b == false){
-            didScroll = true;
-        }
-    });
+ //    $(window).scroll(function (event) {
+ //        if( a == false && b == false){
+ //            didScroll = true;
+ //        }
+ //    });
 
-    function hasScrolled() {
-        clearInterval(didScrollID);
-        var st = $(this).scrollTop();
-        var $Tbottom = $(document).height() - Wheight - 120;
-        if (st > lastScrollTop && st > Wheight){
-            $('.nav').removeClass('is-active').addClass('is-hide');
-            $('.nav-index').removeClass('nav-index--click');
+ //    function hasScrolled() {
+ //        clearInterval(didScrollID);
+ //        var st = $(this).scrollTop();
+ //        var $Tbottom = $(document).height() - Wheight - 120;
+ //        if (st > lastScrollTop && st > Wheight){
+ //            $('.nav').removeClass('is-active').addClass('is-hide');
+ //            $('.nav-index').removeClass('nav-index--click');
             
-            if ( st > $Tbottom ) {
-                $('.nav').removeClass('is-hide').addClass('is-active');
-                $('.nav-index').removeClass('nav-index--click');
+ //            if ( st > $Tbottom ) {
+ //                $('.nav').removeClass('is-hide').addClass('is-active');
+ //                $('.nav-index').removeClass('nav-index--click');
                 
-            }
-        } else {
-            if(st + Wheight < $(document).height()) {
-                $('.nav').removeClass('is-hide').addClass('is-active');
+ //            }
+ //        } else {
+ //            if(st + Wheight < $(document).height()) {
+ //                $('.nav').removeClass('is-hide').addClass('is-active');
                 
-            }
-        }
-        if (st < $(".nav-content").height()) {
-            $('.nav-index').addClass('nav-index--click');
-            $('.mainbar-aside-search input').removeClass('is--focus');
-        } else {
-            $('.nav-index').removeClass('nav-index--click');
-        }
+ //            }
+ //        }
+ //        if (st < $(".nav-content").height()) {
+ //            $('.nav-index').addClass('nav-index--click');
+ //            $('.mainbar-aside-search input').removeClass('is--focus');
+ //        } else {
+ //            $('.nav-index').removeClass('nav-index--click');
+ //        }
         
-        lastScrollTop = st;
-        didScrollID = setTimer();
-    }
+ //        lastScrollTop = st;
+ //        didScrollID = setTimer();
+ //    }
    
 	//footer
 	$('.footer-load').load('/footer');

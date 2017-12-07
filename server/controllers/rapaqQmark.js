@@ -25,9 +25,9 @@ module.exports = ()=>{
             $('div.life-routine-text__intro').each(function (idx, element) {
                 data['life_company_intro'+idx] = $(this).text()
             });
-            db.web_pages.upsert({
+            db.web_pages.update({
                 content:JSON.stringify(data)
-            })
+            },{where:{id:2}})
         }else{
             console.log(error)
         }

@@ -1,17 +1,11 @@
 <template>
-<div class="wrapper" @scroll="onScroll">
+<div class="wrapper" @scroll.native="onScroll">
   <div class="mask" style="display: none;"></div>
   <div class="shareMask" data-id="shareMask"></div>
   <div class="authorMask" data-id="authorMask"></div>
 
   <shareNav></shareNav>
   <div class="wrapper-inner">
-    <div itemscope="" itemtype="http://schema.org/WebSite" style="display: none">
-      <meta itemprop="url" content="https://qshare.rapaq.com/index">
-      <meta itemprop="name" content="RapaQ 設群－台灣領先設計資訊平台">
-      <meta itemprop="description" content="RapaQ 設群 - Q'share 是一個提供設計師與創客分享作品與討論的空間，希望藉此成立設計培育基地，將 RapaQ 打造成設計 Wonderland。">
-      <meta itemprop="url" content="https://lh3.googleusercontent.com/CZgfOlEhZSUysV-XP7udEczvYAoOIpG4s6RCvYx9qHhWWHNvwVPmBhFKrj8AHdniF3gKSjwZACbQUbOXb8UOgsyaiA">
-    </div>
     <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" style="display: none">
       <li itemprop="name"><a itemprop="url" href="https://qshare.rapaq.com/works/index">作品</a></li>
       <li itemprop="name"><a itemprop="url" href="https://qshare.rapaq.com/blog/index">文章</a></li>
@@ -20,13 +14,13 @@
 
     <div class="idx">
       <!-- KV start -->
-      <shareSwiper></shareSwiper>
+      <shareSwiper :swiperData="webData.swiperData" ref="topSwiper"></shareSwiper>
       <!-- KV end -->
       <!-- blog start -->
-			<shareBlog></shareBlog>
+			<shareBlog :blogData="webData.blogData"></shareBlog>
       <!-- blog end -->
       <!-- activity start -->
-			<shareActivity></shareActivity>
+			<shareActivity :activityData="webData.activityData"></shareActivity>
       <!-- activity end -->
 			
       <!-- works start -->
@@ -66,7 +60,8 @@
 	  data () {
 			return {
 				loading: false,
-				lastScrollTop:0
+				lastScrollTop:0,
+				webData: {}
 			}
 	  },
 	  components:{
@@ -86,14 +81,13 @@
 					self: this,
 					info:{},
 					callback(self,res) {
-						self.html = res.body
-							var img = document.getElementsByTagName("img")
-							console.log(img.length)
-						self.$nextTick(function () {
-							var img = document.getElementsByTagName("img")
-
-							console.log(img[0].src)
-						})
+						if (res.body)
+							self.webData = res.body
+							self.$nextTick(function() {
+								var topSwiper = self.$refs['topSwiper']
+								topSwiper.initSwiper();
+								console.log(topSwiper)
+							})
 						// img[0].src = "../assets/qmaker-graphic.svg"
 					}
 				})
@@ -130,7 +124,7 @@
 		        Wwidth = $(window).width();
 		    });
         clearInterval(didScrollID);
-        var st = $('.wrapper').scrollTop();
+        var st = $(document).scrollTop();
         var $Tbottom = $('.wrapper-inner').height() - Wheight - 120;
         if (st > this.lastScrollTop && st > Wheight){
             $('.nav').removeClass('is-active').addClass('is-hide');
@@ -160,11 +154,11 @@
 	    setTimer(){
 	    	var self = this
         var i = setInterval(function(){
-            if (self.didScroll) {
-            		console.log('do scro')
-                self.hasScrolled();
-                self.didScroll = false;
-            }
+          if (didScroll) {
+        		console.log('do scro')
+            self.hasScrolled();
+            didScroll = false;
+          }
         }, 500);
         return i;
 	    }
@@ -183,8 +177,8 @@
 		},
 		mounted() {
 			console.log('mounted...')
-
-
+			this.getWeb()
+			$(window).scroll(this.onScroll);
 		}
 	}
 </script>

@@ -1,8 +1,9 @@
-(function ($) {
+; (function ($) {
 	$.fn.tabs = function (options) {
 
 		var defaults = {
 		}
+
 		if (this.length == 0) return this;
 
 		// support mutltiple elements
@@ -45,5 +46,3 @@
 		return this
 	};
 })(jQuery);
-console.log('index_helper')
-console.log(jQuery)

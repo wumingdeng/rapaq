@@ -24,19 +24,19 @@
       <!-- activity end -->
 			
       <!-- works start -->
-			<shareWork></shareWork>
+			<shareWork :workData="webData.workData"></shareWork>
       <!-- works end -->
 
       <!-- designer start -->
-      <shareDesigner></shareDesigner>
+      <shareDesigner :designerData="webData.designerData" ref="shareDesigner"></shareDesigner>
       <!-- designer end -->
 
       <!-- product start -->
-			<shareProduct></shareProduct>
+			<shareProduct :productData="webData.productData" ref="shareProduct"></shareProduct>
       <!-- product end -->
 
       <!-- advertisement start -->
-			<shareAdvertisement></shareAdvertisement>
+			<shareAdvertisement :AdvertisementData="webData.AdvertisementData" ref="shareAdvertisement"></shareAdvertisement>
       <!-- advertisement end -->
     </div>
     
@@ -86,7 +86,12 @@
 							self.$nextTick(function() {
 								var topSwiper = self.$refs['topSwiper']
 								topSwiper.initSwiper();
-								console.log(topSwiper)
+								var shareDesigner = self.$refs['shareDesigner']
+								shareDesigner.initSwiper();					
+								var shareProduct = self.$refs['shareProduct']
+								shareProduct.initSwiper();				
+								var shareAdvertisement = self.$refs['shareAdvertisement']
+								shareAdvertisement.initSwiper();							
 							})
 						// img[0].src = "../assets/qmaker-graphic.svg"
 					}
@@ -155,7 +160,7 @@
 	    	var self = this
         var i = setInterval(function(){
           if (didScroll) {
-        		console.log('do scro')
+        		// console.log('do scro')
             self.hasScrolled();
             didScroll = false;
           }

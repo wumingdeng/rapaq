@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import $ from 'jquery'
+// import $ from 'jquery'
+require('../static/js/share/index-helper.js')
+// require('../static/js/common.js')
 
 // require('../static/js/common.js')
 

@@ -474,7 +474,7 @@
         </div>
 </template>
 <script>
-require('../../static/js/nav.js')
+// require('../../static/js/nav.js')
 require('../../static/js/maker/jquery.js')
 require('../../static/js/maker/mousewheel.min.js')
 require('../../static/js/maker/swiper.js')

@@ -5,7 +5,7 @@
       <div class="idxSection__title">
         <ul class="idx__tab clearfix" data-js-tabs="true">
           <li data-id="js-tab"><span data-tab-href="01">設群推薦</span></li>
-          <li data-id="js-tab" class="active"><span data-tab-href="02" class="on">最新作品</span></li>
+          <li data-id="js-tab"><span data-tab-href="02">最新作品</span></li>
           <li data-id="js-tab"><span data-tab-href="03">熱門作品</span></li>
         </ul>
       </div>
@@ -13,157 +13,29 @@
         <div class="tab_panel" data-id="js-panel" data-tab-id="01" style="display: none;">
           <div class="promo clearfix">
             <div class="promo__left">
-              <a href="https://qshare.rapaq.com/works/show/118" class="promo__item" itemscope="" itemtype="http://schema.org/Article">
-                <div class="image"><img src="https://lh3.googleusercontent.com/lC8saqIkK1pv0m2fKeRPVpXy_3zdOyOwSJpH1K_ScjMVp5v7nld2KsSx1gC_pDydt-aOU1KwH1UA0u4vqVl3cpxA=s560" alt="銀河雲鳥" itemprop="image"></div>
+              <a v-for="(item,index) in workData.sqtj" class="promo__item" :href="item.checkUrl">
+                <div class="image">
+                  <img :src="item.imgSrc" :alt="item.title">
+                </div>
                 <div class="info">
-                  <div class="info__title" itemprop="name headline">銀河雲鳥</div>
+                  <div class="info__title" itemprop="name headline">{{item.title}}</div>
                   <div class="info__bottom">
                     <div class="author">
                       <div class="author__pic">
-                        <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000266.jpg " alt="">
+                        <img :src="item.authorHead" alt="">
                       </div>
                       <div class="author__info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                        <div class="name" itemprop="name">
-                          57 Art &amp; Illustration Studio
+                        <div class="name">
+                          {{item.authorName}}
                         </div>
-                        <div class="date">2017年10月25日</div>
+                        <div class="date">{{item.date}}</div>
                       </div>
-                      <meta itemprop="datePublished dateModified" content="2017-10-25">
                     </div>
                     <div class="like">
                       <i class="icon icon__like create_collect" primary_id="118" type="1"></i>
                     </div>
                   </div>
                 </div>
-                <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="Rapaq 社群">
-                  <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
-                  </div>
-                </div>
-                <meta itemprop="url mainEntityOfPage" content="https://qshare.rapaq.com/works/show/118">
-              </a>
-              <a href="https://qshare.rapaq.com/works/show/108" class="promo__item" itemscope="" itemtype="http://schema.org/Article">
-                <div class="image"><img src="https://lh3.googleusercontent.com/yQf89HfWzurMhdn-sKFnWVd6iivpCoZN6mAOHYMkvvR8i5g-lDBMp3be4usCyhLELn_YZdt2p45XHCbNfndq7ygY9NM=s560" alt="HAVE FUN!" itemprop="image"></div>
-                <div class="info">
-                  <div class="info__title" itemprop="name headline">HAVE FUN!</div>
-                  <div class="info__bottom">
-                    <div class="author">
-                      <div class="author__pic">
-                        <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000267.jpg " alt="">
-                      </div>
-                      <div class="author__info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                        <div class="name" itemprop="name">
-                          披薩先生
-                        </div>
-                        <div class="date">2017年10月23日</div>
-                      </div>
-                      <meta itemprop="datePublished dateModified" content="2017-10-23">
-                    </div>
-                    <div class="like">
-                      <i class="icon icon__like create_collect" primary_id="108" type="1"></i>
-                    </div>
-                  </div>
-                </div>
-                <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="Rapaq 社群">
-                  <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
-                  </div>
-                </div>
-                <meta itemprop="url mainEntityOfPage" content="https://qshare.rapaq.com/works/show/108">
-              </a>
-              <a href="https://qshare.rapaq.com/works/show/62" class="promo__item" itemscope="" itemtype="http://schema.org/Article">
-                <div class="image"><img src="https://lh3.googleusercontent.com/ZwWLCKnITjfZUK_kc26ts6BChb1Juet52Pidw_WyrEej-X9cf7mIe5thaQl2XU8tcxgZiLZH6ivEaDFCYXOxn9JpJQ=s560" alt="春聯設計spring couplet | Illustration" itemprop="image"></div>
-                <div class="info">
-                  <div class="info__title" itemprop="name headline">春聯設計spring couplet | Illustration</div>
-                  <div class="info__bottom">
-                    <div class="author">
-                      <div class="author__pic">
-                        <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000122.jpg " alt="">
-                      </div>
-                      <div class="author__info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                        <div class="name" itemprop="name">
-                          Damee Wu
-                        </div>
-                        <div class="date">2017年09月07日</div>
-                      </div>
-                      <meta itemprop="datePublished dateModified" content="2017-09-07">
-                    </div>
-                    <div class="like">
-                      <i class="icon icon__like create_collect" primary_id="62" type="1"></i>
-                    </div>
-                  </div>
-                </div>
-                <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="Rapaq 社群">
-                  <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
-                  </div>
-                </div>
-                <meta itemprop="url mainEntityOfPage" content="https://qshare.rapaq.com/works/show/62">
-              </a>
-            </div>
-            <div class="promo__right">
-              <a href="https://qshare.rapaq.com/works/show/131" class="promo__item" itemscope="" itemtype="http://schema.org/Article">
-                <div class="image"><img src="https://lh3.googleusercontent.com/0M_v_xF2TqLn3M5ZRm0wX4d3Lt1qnpCtO7ZhpqlaQVSwWxVlGE5LQ50z7ExYZFja8ZcBx8q4nksHL7pxEE3Yr4b5=s560" alt="用遊樂場來比喻" itemprop="image"></div>
-                <div class="info">
-                  <div class="info__title" itemprop="name headline">用遊樂場來比喻</div>
-                  <div class="info__bottom">
-                    <div class="author">
-                      <div class="author__pic">
-                        <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000121.jpg " alt="">
-                      </div>
-                      <div class="author__info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                        <div class="name" itemprop="name">
-                          椪小雨
-                        </div>
-                        <div class="date">2017年10月29日</div>
-                      </div>
-                      <meta itemprop="datePublished dateModified" content="2017-10-29">
-                    </div>
-                    <div class="like">
-                      <i class="icon icon__like create_collect" primary_id="131" type="1"></i>
-                    </div>
-                  </div>
-                </div>
-                <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="Rapaq 社群">
-                  <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
-                  </div>
-                </div>
-                <meta itemprop="url mainEntityOfPage" content="https://qshare.rapaq.com/works/show/131">
-              </a>
-              <a href="https://qshare.rapaq.com/works/show/100" class="promo__item" itemscope="" itemtype="http://schema.org/Article">
-                <div class="image"><img src="https://lh3.googleusercontent.com/tIeArObJfsCaFcMUSrSORI8bHxLa1aCx1Whesq5ZTtBQuk7UBU-OpWPWKWJ3T-Ow2NsMDg0BzYJLwwzgkVOBHSnl=s560" alt="買好物，過好年" itemprop="image"></div>
-                <div class="info">
-                  <div class="info__title" itemprop="name headline">買好物，過好年</div>
-                  <div class="info__bottom">
-                    <div class="author">
-                      <div class="author__pic">
-                        <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000047.png " alt="">
-                      </div>
-                      <div class="author__info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                        <div class="name" itemprop="name">
-                          Xunyu
-                        </div>
-                        <div class="date">2017年10月06日</div>
-                      </div>
-                      <meta itemprop="datePublished dateModified" content="2017-10-06">
-                    </div>
-                    <div class="like">
-                      <i class="icon icon__like create_collect" primary_id="100" type="1"></i>
-                    </div>
-                  </div>
-                </div>
-                <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="Rapaq 社群">
-                  <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
-                  </div>
-                </div>
-                <meta itemprop="url mainEntityOfPage" content="https://qshare.rapaq.com/works/show/100">
               </a>
             </div>
           </div>
@@ -501,6 +373,25 @@
 </template>
 
 <script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    props:{
+      workData:{
+        type:Object,
+        default: function(){
+          return {}
+        }
+      }
+    },
+    mounted() {
+      $('[data-js-tabs="true"]').tabs();
+
+    }
+  }
 	
 </script>
 

@@ -143,14 +143,14 @@
             <div class="page-inner pb0">
                 <div class="page-header page-header--blog" data-id="js-pageHeader">
                                         <div class="page-header__info page-header__info--public" style="">
-                                            <div class="page-header__title" itemprop="name headline">[創創集資] Sansui -&nbsp;山水盒，打造個人桌面景致</div>
+                                            <div class="page-header__title" itemprop="name headline">{{html['page-header_title']}}</div>
                         <div class="page-header__category">
-                            <span><a href="https://qshare.rapaq.com/blog/index?blog_type=2">未來科技</a></span>
+                            <span><a href="https://qshare.rapaq.com/blog/index?blog_type=2">{{html['page-header__category']}}</a></span>
                         </div>
-                        <div class="page-header__date">2017年11月02日</div>
+                        <div class="page-header__date">{{html['page-header__date']}}</div>
                         <meta itemprop="datePublished dateModified" content="2017-11-02">
                         <div class="page-header__freq frequency">
-                             116次瀏覽                                                                                 </div>
+                            {{html['page-header__freq']}}                                                                             </div>
                     </div>
 
                     <div class="page-header__action page-header__action--blog">
@@ -213,7 +213,7 @@
                                     <li>山水盒</li>
                                 </ul>
                 <div class="page-inner-author">
-                    <div class="page-inner-author__pic"><img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000233.jpg" alt=""></div>
+                    <div class="page-inner-author__pic"><img src="/static/img/headpic_100000233.jpg" alt=""></div>
                     <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                         <div class="page-inner-author__name" itemprop="name">RapaQ 創創</div>
                     </span>
@@ -331,19 +331,6 @@
         </div>
     </div>
 </section>
-<section class="w-comment">
-    <div class="w-comment-wrap">
-        <div class="w-comment-content">
-            <div class="w-comment-content__total">評論 ( 0 )</div>
-                            <div class="a-comment-content__login">
-                    你必須 <a href="https://oauth.rapaq.com/register/web" target="_blank">註冊</a> 或 <a href="https://qshare.rapaq.com/login">登入</a> 才能評論。
-                </div>
-                        <ul class="w-comment-content-say">
-                            </ul>
-                    </div>
-    </div>
-</section>
-
 
                         <footer class="footer">
                 <div class="footer-trigger">
@@ -442,29 +429,25 @@
 </template>
 
 <script>
+require('../../static/js/blog/custom.js')
 export default {
   data() {
     return {
       loading: false,
-      html: "",
-      url: "https://qgoods.rapaq.com"
+      html: {},
+      url: "https://qgoods.rapaq.com",
+      blogId:0,
+      resData:{}
     };
   },
   methods: {
-    getWeb() {
-      this.$store.dispatch("getShare", {
+    getWeb(fb) {
+      this.$store.dispatch("getBlogById", {
         self: this,
-        info: {},
+        info: {id:this.blogId},
         callback(self, res) {
           self.html = res.body;
-          var img = document.getElementsByTagName("img");
-          console.log(img.length);
-          self.$nextTick(function() {
-            var img = document.getElementsByTagName("img");
-
-            console.log(img[0].src);
-          });
-          // img[0].src = "../assets/qmaker-graphic.svg"
+            fb();
         }
       });
     },
@@ -472,16 +455,28 @@ export default {
       console.log("onload");
     }
   },
-  mounted() {}
+  mounted() {
+      this.blogId = this.$route.params.id || 95
+      this.getWeb(()=>{
+          document.getElementById('page-inner').innerHTML = this.html['page-inner']
+      })
+
+  }
 };
 </script>
 
 <style>
-@import "../../static/css/maker/base.css";
-@import "../../static/css/maker/search.css";
-@import "../../static/css/maker/swiper.css";
-@import "../../static/css/maker/sweetalert2.css";
-@import "../../static/css/maker/QMaker.css";
-@import "../../static/css/maker/helper.css";
-@import "../../static/css/maker/layout.css";
+	@import url('../../static/css/share/swiper.css');
+	@import url('../../static/css/share/slick.css');
+	@import url('../../static/css/share/base.css');
+	@import url('../../static/css/share/layout.css');
+	@import url('../../static/css/share/sweetalert2.css');
+	@import url('../../static/css/share/step.css');
+	@import url('../../static/css/share/create.css');
+	@import url('../../static/css/share/loading.css');
+	@import url('../../static/css/share/helper.css');
+	@import url('../../static/css/share/works.css');
+	@import url('../../static/css/share/index.css');
+	@import '../../static/css/share/page.css';
+	@import url('../../static/css/share/classify.css');
 </style>

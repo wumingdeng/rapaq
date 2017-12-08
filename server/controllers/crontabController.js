@@ -101,8 +101,8 @@ var rule2 = "0 * * * * *"
 var getWeb = schedule.scheduleJob(rule2, function(){
     console.log(moment().format('YYYY-MM-DD HH:mm:ss'))
     // getRapaqWeb()
-    qmark();
-    blog(95);
+    // qmark();
+    // blog(95);
 })
 
 module.exports = schedule

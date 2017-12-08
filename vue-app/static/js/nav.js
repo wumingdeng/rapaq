@@ -24,6 +24,7 @@ $(function(){
         $('.mainbar-aside-search input').removeClass('is--focus');
         
     }
+
     function show_member(){
         $memberContent.stop(true, false).slideDown(200);
         $memberClick.toggleClass('is--mclick');
@@ -146,17 +147,6 @@ $(function(){
             $('.mainbar-aside-search input').addClass('is--focus');
         }
         
-    });
-    $(window).resize(function () {
-        hide_member();
-        b = false;
-        hide_menu();
-        a = false;
-        hide_search();
-        $menuContent.removeAttr( "style" );
-        $memberContent.removeAttr( "style" );
-        $('.nav, .nav-index, .nav-content-mainbar, .mainbar__logo, .mainbar-aside, .wrapper-index, .wrapper-inner').removeAttr( "style" );
-        $menuContent.removeClass('add--z-index50');
     });
 
     $('.search__input').keypress(function (e) {

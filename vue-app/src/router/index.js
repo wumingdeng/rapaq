@@ -31,7 +31,7 @@ export default new Router({
     	component: Maker
     },
     {
-    	path: '/blog',
+    	path: '/blog:id',
     	name: "blog",
     	component: Blog
     }

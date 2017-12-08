@@ -69,7 +69,102 @@ function getRapaqWeb() {
                 activityData.push(obj)
             })
             resData.activityData = activityData
-            console.log(activityData)
+
+            //work数据
+            var workData = {}
+            var sqtj = []
+            $("#mainpage_works .idxSection__main--tab [data-tab-id='01'] .promo a").each(function(idx,element) {
+                var obj = {}
+                var $element = $(element);
+                obj.checkUrl = $element.attr('href')
+                obj.imgSrc = $element.find('.image img').attr('src')
+                obj.title = $element.find('.info .info__title').text()
+                obj.authorHead = $element.find('.info .author__pic img').attr('src')
+                obj.authorName = $element.find('.author__info .name').text()
+                obj.date = $element.find('.author__info .date').text()
+                sqtj.push(obj)
+            })
+            workData.sqtj = sqtj
+            var zxzp = []
+            $("#mainpage_works .idxSection__main--tab [data-tab-id='02'] .promo a").each(function(idx,element) {
+                var obj = {}
+                var $element = $(element);
+                obj.checkUrl = $element.attr('href')
+                obj.imgSrc = $element.find('.image img').attr('src')
+                obj.title = $element.find('.info .info__title').text()
+                obj.authorHead = $element.find('.info .author__pic img').attr('src')
+                obj.authorName = $element.find('.author__info .name').text()
+                obj.date = $element.find('.author__info .date').text()
+                zxzp.push(obj)
+            })
+            workData.zxzp = zxzp
+            var rmzp = []
+            $("#mainpage_works .idxSection__main--tab [data-tab-id='03'] .promo a").each(function(idx,element) {
+                var obj = {}
+                var $element = $(element);
+                obj.checkUrl = $element.attr('href')
+                obj.imgSrc = $element.find('.image img').attr('src')
+                obj.title = $element.find('.info .info__title').text()
+                obj.authorHead = $element.find('.info .author__pic img').attr('src')
+                obj.authorName = $element.find('.author__info .name').text()
+                obj.date = $element.find('.author__info .date').text()
+                rmzp.push(obj)
+            })
+            workData.rmzp = rmzp
+
+            resData.workData = workData
+
+            //designer数据
+            var designerData = []
+            $("#mainpage_designer .swiper-container--designer .li").each(function(id, item) {
+                var obj = {}
+                var $item = $(item)
+                obj.authorHref = $item.find('.designerBox__info .face').attr('href')
+                obj.authorHead = $item.find('.designerBox__info img').attr('src')
+                obj.authorName = $item.find('.designerBox__info .name a').text()
+                obj.authorId = $item.find('.designerBox__info .action .btn--follow').attr('followed_userid')
+                obj.followCount = $item.find(".designerBox__info [data-id='cnt']").text()
+                obj.picArr = []
+                $item.find('.designerBox__pic li').each(function(idx,element) {
+                    var $element = $(element);
+                    var pic = {}
+                    pic.href = $element.find('a').attr('href')
+                    pic.style = $element.find('a').attr('style')
+                    obj.picArr.push(pic)
+                })
+                designerData.push(obj)
+            })
+
+            resData.designerData = designerData
+
+            //product数据
+            var productData = []
+            $("[data-swiper='product'] .swiper-slide").each(function(id, item) {
+                var obj = {}
+                var $item = $(item)
+                obj.checkUrl = $item.find('.productBox a').attr('href')
+                obj.imgSrc = $item.find('.productBox .productBox__image img').attr('src')
+                obj.logo = $item.find('.productBox .logo img').attr('src')
+                obj.brand = $item.find('.productBox .txt__brand').text()
+                obj.title = $item.find('.productBox .txt__name').text()
+                productData.push(obj)
+            })
+
+            resData.productData = productData
+
+            //Advertisement数据
+            var AdvertisementData = []
+            $("[data-swiper='leaflet'] .swiper-slide").each(function(id, item) {
+                var obj = {}
+                var $item = $(item)
+                obj.title = $item.find('.name').text()
+                obj.href = $item.find('.image').attr('href')
+                obj.imgSrc = $item.find('.image img').attr('src')
+                AdvertisementData.push(obj)
+            })
+
+            resData.AdvertisementData = AdvertisementData
+            console.log(AdvertisementData)
 
             db.web_pages.update({
                 content: JSON.stringify(resData)

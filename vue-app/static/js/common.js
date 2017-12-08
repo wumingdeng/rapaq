@@ -1,3 +1,4 @@
+    console.log('load common.js')
     var a = false, b = false;
 	
     var didScrollID;

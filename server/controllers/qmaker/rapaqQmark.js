@@ -1,7 +1,7 @@
 
 var cheerio = require('cheerio')
 var request = require('request')
-var db = require('../models')
+var db = require('../../models')
 module.exports = ()=>{
     var options={
         "url":"https://qmaker.rapaq.com",
@@ -26,7 +26,7 @@ module.exports = ()=>{
                 data['life_company_intro'+idx] = $(this).text()
             });
             db.web_pages.upsert({
-                content:JSON.stringify(data)
+                id:2,content:JSON.stringify(data)
             })
         }else{
             console.log(error)

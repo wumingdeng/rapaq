@@ -17,6 +17,13 @@ web_router.route('/getMaker').get(function (req, res) {
 	})
 })
 
+web_router.route('/getBlogById').post(function (req, res) {
+	var idx =  req.body.idx;
+	db.blog_pages.findOne({where: {id: idx}}).then(function(data) {
+		res.send(JSON.parse(data.content))
+	})
+})
+
 web_router.route('/test').get(function(req, res) {
     var options={
         "url":"https://lh3.googleusercontent.com/yQf89HfWzurMhdn-sKFnWVd6iivpCoZN6mAOHYMkvvR8i5g-lDBMp3be4usCyhLELn_YZdt2p45XHCbNfndq7ygY9NM=s560",

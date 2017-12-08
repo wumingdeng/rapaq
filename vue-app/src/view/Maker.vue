@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" @scroll="onScorll">
         <div class="mask"></div>
         <nav class="nav nav-index nav-index--click">
             <div class="nav-load">
@@ -157,14 +157,14 @@
                             </li>
                             <li class="swiper-slide">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/95">
+                                    <router-link :to="{name:'blog', params: { idx: 95 }}">
                                         <img src="https://qmaker.rapaq.com/img/article/article_02.png" alt="">
-                                    </a>
+                                    </router-link>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/95">{{resData.list_title1}}</a>
+                                            <router-link :to="{name:'blog', params: { idx: 95 }}">{{resData.list_title1}}</router-link>
                                         </div>
                                     </div>
                                     <div class="list__intro">
@@ -474,10 +474,11 @@
         </div>
 </template>
 <script>
-require('../../static/js/nav.js')
-require('../../static/js/maker/jquery.js')
-require('../../static/js/maker/mousewheel.min.js')
-require('../../static/js/maker/swiper.js')
+require("../../static/js/nav.js");
+require("../../static/js/common.js");
+require("../../static/js/maker/jquery.js");
+require("../../static/js/maker/mousewheel.min.js");
+require("../../static/js/maker/swiper.js");
 export default {
   name: "HelloWorld",
   data() {
@@ -490,14 +491,14 @@ export default {
         (window.Global.isDev ? "static/" : "") + "img/maker/banner02.jpg",
       banner03:
         (window.Global.isDev ? "static/" : "") + "img/maker/banner03.jpg",
-      resData: {}
+      resData: {},
+      didScroll: false
     };
   },
   methods: {
-    alertDismissed() {
-    },
-    onAlert() {
-      navigator.notification.alert("Cordova is ready");
+    alertDismissed() {},
+    onScorll() {
+      this.didScroll = true;
     },
     getWeb() {
       this.$store.dispatch("getMaker", {
@@ -507,62 +508,102 @@ export default {
           self.resData = res.body;
         }
       });
+    },
+    oninitJs() {
+        var _self = this
+      var swiper = new Swiper(".header .swiper-container", {
+        pagination: ".swiper-pagination",
+        paginationClickable: true,
+        centeredSlides: true,
+        loop: true,
+        autoplay: 3000
+      });
+
+      //swiper-project
+      var swiperCart = new Swiper(".project-list", {
+        nextButton: ".projectNext",
+        prevButton: ".projectPrev",
+        slidesPerView: 2,
+        spaceBetween: 20,
+        breakpoints: {
+          414: {
+            slidesPerView: 1,
+            spaceBetweenSlides: 0
+          }
+        }
+      });
+      var didScrollID = setTimer();
+    var lastScrollTop = 0,
+        delta = 120,
+        Wheight = $(window).height();
+        Wwidth = $(window).width();
+    $(window).resize(function () {
+        Wheight = $(window).height();
+        Wwidth = $(window).width();
+    });
+      function setTimer() {
+        i = setInterval(function() {
+          if (_self.didScroll) {
+            hasScrolled();
+            _self.didScroll = false;
+          }
+        }, 500);
+        return i;
+      }
+      //   $(window).scroll(function(event) {
+      //     if (a == false && b == false) {
+      //       didScroll = true;
+      //     }
+      //   });
+
+      function hasScrolled() {
+        clearInterval(didScrollID);
+        var st = $('.wrapper').scrollTop();
+        var $Tbottom = Wheight - 120;
+        if (st > lastScrollTop && st > Wheight) {
+          $(".nav")
+            .removeClass("is-active")
+            .addClass("is-hide");
+          $(".nav-index").removeClass("nav-index--click");
+        } else {
+          if (st < Wheight) {
+            $(".nav")
+              .removeClass("is-hide")
+              .addClass("is-active");
+          }else if(st<$Tbottom){
+            $(".nav")
+              .removeClass("is-hide")
+              .addClass("is-active");
+            $(".nav-index").removeClass("nav-index--click");
+          }
+        }
+        if (st < $(".nav-content").height()) {
+          $(".nav-index").addClass("nav-index--click");
+          $(".mainbar-aside-search input").removeClass("is--focus");
+        } else {
+          $(".nav-index").removeClass("nav-index--click");
+        }
+
+        lastScrollTop = st;
+        didScrollID = setTimer();
+      }
     }
   },
   created() {},
   mounted() {
-    var swiper = new Swiper(".header .swiper-container", {
-      pagination: ".swiper-pagination",
-      paginationClickable: true,
-      centeredSlides: true,
-      loop: true,
-      autoplay: 3000
-    });
-
-    //swiper-funding
-    var swiperCart = new Swiper('.funding-focus', {
-        nextButton: '.focusNext',
-        prevButton: '.focusPrev',
-        centeredSlides: true,
-        autoplay: 5000
-    });
-    //swiper-project
-    var swiperCart = new Swiper('.project-list', {
-        nextButton: '.projectNext',
-        prevButton: '.projectPrev',
-        slidesPerView: 2,
-        spaceBetween: 20,
-        breakpoints: {
-            414: {
-                slidesPerView: 1,
-                spaceBetweenSlides: 0
-            }
-        }
-    });
-
-    this.getWeb();
+      this.getWeb();
+    this.oninitJs();
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/**
-@import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/sweetalert2.css);
-@import url(https://qmaker.rapaq.com/js/vendors/sweetalert2-master/css/helper.css);
-@import url(https://qmaker.rapaq.com/css/base.css);
-@import url(https://qmaker.rapaq.com/css/layout.css);
-@import url(https://qmaker.rapaq.com/css/search.css);
-@import url(https://qmaker.rapaq.com/css/QMaker.css);
-@import url(https://qmaker.rapaq.com/css/vendors/swiper.min.css);
-*/
-
-@import '../../static/css/maker/base.css';
-@import '../../static/css/maker/search.css';
-@import '../../static/css/maker/swiper.css';
-@import '../../static/css/maker/sweetalert2.css';
-@import '../../static/css/maker/QMaker.css';
-@import '../../static/css/maker/helper.css';
-@import '../../static/css/maker/layout.css';
-
+@import "../../static/css/maker/base.css";
+@import "../../static/css/maker/search.css";
+@import "../../static/css/maker/swiper.css";
+@import "../../static/css/maker/sweetalert2.css";
+@import "../../static/css/maker/QMaker.css";
+@import "../../static/css/maker/helper.css";
+@import "../../static/css/maker/layout.css";
 </style>

@@ -116,8 +116,6 @@ export default {
       this.$router.push('/goods')
     },
     onOpenMaker() {
-      console.log('hehe')
-      // window.location.href = "https://qmaker.rapaq.com"
       this.$router.push('/maker')
     }
   },

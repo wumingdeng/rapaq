@@ -474,11 +474,11 @@
         </div>
 </template>
 <script>
-require("../../static/js/nav.js");
-require("../../static/js/common.js");
-require("../../static/js/maker/jquery.js");
+// require("../../static/js/nav.js");
+// require("../../static/js/common.js");
+// require("../../static/js/maker/jquery.js");
 require("../../static/js/maker/mousewheel.min.js");
-require("../../static/js/maker/swiper.js");
+// require("../../static/js/maker/swiper.js");
 export default {
   name: "HelloWorld",
   data() {
@@ -542,7 +542,7 @@ export default {
         Wwidth = $(window).width();
     });
       function setTimer() {
-        i = setInterval(function() {
+        var i = setInterval(function() {
           if (_self.didScroll) {
             hasScrolled();
             _self.didScroll = false;

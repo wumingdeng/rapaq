@@ -5,8 +5,8 @@ var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV || 'development';
 var db        = {};
 
-// var config = require('../config.json')
-var config = require('../config_local.json')
+var config = require('../config.json')
+// var config = require('../config_local.json')
 
 // database initialize
 var sequelize = new Sequelize(config.dbname, config.user, config.pass, {

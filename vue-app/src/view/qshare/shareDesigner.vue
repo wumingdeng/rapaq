@@ -326,3 +326,50 @@
 </div>
 
 </template>
+
+<script>
+  export default {
+
+    mounted() {
+      // designer block do swipe on mobile
+      var swiperContainer = $('[data-swiper="designer"]');
+      var designerSwiper;
+      if (Modernizr.mq('(max-width: 414px)')) {
+        designerSwiper = new Swiper('[data-swiper="designer"]', {
+          loop: true,
+          slideClass: 'li',
+          pagination: '[data-swiper-pagination="designer"]',
+          paginationClickable: true,
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          spaceBetween: 20,
+          // autoplay: 3000
+        });
+      }
+
+      $(window).on('resize', function() {
+        if (Modernizr.mq('(max-width: 414px)') && !designerSwiper) {
+          designerSwiper = swiperContainer.swiper({
+            loop: true,
+            slideClass: 'li',
+            pagination: '[data-swiper-pagination="designer"]',
+            paginationClickable: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 20
+          });
+        } else if (Modernizr.mq('(min-width: 415px)')) {
+          if (designerSwiper) {
+            designerSwiper.destroy();
+            designerSwiper = undefined;
+          }
+          var $openMultipleAuthor = $('.openMultipleAuthor'),
+            KVrightH = $openMultipleAuthor.closest('.idx__kv--info').outerHeight(true),
+            multipleTitleH = $openMultipleAuthor.find('.multipleAuthor__title').outerHeight(true);
+          $('[data-multiple-author="close"]').trigger('click');
+        }
+      });
+    }
+  }
+
+</script>

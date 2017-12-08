@@ -6,6 +6,8 @@ import router from './router'
 import store from './store'
 import $ from 'jquery'
 
+// require('../static/js/common.js')
+
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 

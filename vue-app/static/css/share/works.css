@@ -381,32 +381,32 @@
   bottom: 20px;
   z-index: 2;
   cursor: pointer;
-  background-image: url("../img/icons/like.svg");
+  background-image: url("/static/img/icons/like.svg");
   background-position: 50% 50%;
   background-size: 26px 26px;
   background-repeat: no-repeat;
 }
 
 .list-inner__like.is--active, .list-inner__edit.is--active {
-  background-image: url("../img/icons/like--active.svg");
+  background-image: url("/static/img/icons/like--active.svg");
 }
 
 @media only screen and (min-width: 768px) {
   .list-inner__like:hover {
-    background-image: url("../img/icons/like--active.svg");
+    background-image: url("/static/img/icons/like--active.svg");
   }
 }
 
 .list-inner__edit {
   bottom: 22px;
-  background-image: url("../img/icons/icon-edit.svg");
+  background-image: url("/static/img/icons/icon-edit.svg");
   background-position: 50% 50%;
   background-size: 30px 30px;
   background-repeat: no-repeat;
 }
 
 .list-inner__edit.edit--active {
-  background-image: url("../img/icons/icon-edit--active.svg");
+  background-image: url("/static/img/icons/icon-edit--active.svg");
 }
 
 @media only screen and (max-width: 414px) {

@@ -97,7 +97,7 @@
       position: absolute;
       right: 0;
       top: 20px;
-      background-image: url(../img/icons/icon-close.png);
+      background-image: url(/static/img/icons/icon-close.png);
       background-position: 0 -80px;
       background-size: 40px 200px; }
 #content_show .btn {

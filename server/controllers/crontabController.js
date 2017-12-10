@@ -175,10 +175,10 @@ function getRapaqWeb() {
     })
 }
 
-qmark();
-blog(95); //测试 写死的blog日记序号
+// qmark();
+// blog(95); //测试 写死的blog日记序号
 
-getRapaqWeb();
+// getRapaqWeb();
 //每天3点把超过一天未支付的订单变成自动取消的状态
 // var j = schedule.scheduleJob('0 0 * * * *', function(){
 //     // console.log('定时任务 开')

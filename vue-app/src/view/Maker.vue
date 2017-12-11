@@ -140,7 +140,7 @@
                             <li class="swiper-slide" v-for="(item,index) in resData.blog" :key="index">
                                 <div class="list__pic">
                                     <router-link :to="{name:'blog', params: { id: item.index }}">
-                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                        <img :src="getImgSrc(item.img)" alt="">
                                      </router-link>
                                 </div>
                                 <div class="list-include">
@@ -171,7 +171,7 @@
                             <li class="swiper-slide" v-for="(item,index) in resData.company" :key="index">
                                 <div class="life-routine__pic">
                                     <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                        <img :src="getImgSrc(item.img)" alt="">
                                     </a>
                                 </div>
                                 <div class="life-routine-text">
@@ -216,16 +216,16 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App",
       curDom: {},
-      banner01:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner01.jpg",
-      banner02:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner02.jpg",
-      banner03:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner03.jpg",
+      banner01:"static/img/maker/banner01.jpg",
+      banner02:"static/img/maker/banner02.jpg",
+      banner03:"static/img/maker/banner03.jpg",
       resData: {}
     };
   },
   methods: {
+    getImgSrc(fileName){
+        return window.Global.serverAddress+'/'+fileName
+    },
     alertDismissed() {},
     getWeb() {
       this.$store.dispatch("getMaker", {

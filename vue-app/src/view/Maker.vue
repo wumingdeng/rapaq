@@ -311,6 +311,7 @@ export default {
         $mask.show();
         $mask.toggleClass("is--show");
         didScroll = false;
+        a = true
         clearInterval(didScrollID);
         $('.nav-index').removeClass("nav-index--click");
         $('.mainbar-aside-search input').addClass('is--focus');
@@ -319,6 +320,7 @@ export default {
         $mask.hide();
         $mask.removeClass("is--show"); 
         didScroll = true;
+        a = false
         didScrollID = setTimer();
         $('.mainbar-aside-search input').removeClass('is--focus');
         
@@ -336,6 +338,7 @@ export default {
         $('.nav-index').removeClass("nav-index--click");
     }
     function hide_member(){
+        console.log('yinchang')
         $memberContent.stop(true, false).slideUp(200);
         $memberClick.removeClass('is--mclick');
         $loginClick.toggleClass('is--mclick');
@@ -347,12 +350,14 @@ export default {
     }
     
     function show_menu(){
+        console.log('show_menu')
         if (Wwidth <= 768) {
             $('.nav').toggleClass('is--absolute');
             $('.nav-content-mainbar').toggleClass('is--fixed add--z-index100');
             $('.mainbar__logo').toggleClass('is--fixed add--z-index100 add--background-color-fff');
             $('.mainbar-aside').toggleClass('is--fixed add--z-index100');
             $menuContent.toggleClass('add--z-index50');
+            $('.wrapper-index, .wrapper-inner').toggleClass('is--zeroheight');
             $('.wrapper-index, .wrapper-inner').toggleClass('is--zeroheight');
         }
         $menuContent.stop(true, false).slideDown(200);
@@ -364,6 +369,7 @@ export default {
         $('.nav-index').removeClass("nav-index--click");
     }
     function hide_menu(){
+        console.log('hide_menu')
         if (Wwidth <= 768) {
             $('.nav').removeClass('is--absolute');
             $('.nav-content-mainbar').removeClass('is--fixed add--z-index100');
@@ -448,7 +454,7 @@ export default {
         
     });
     $(window).resize(function () {
-        hide_member();
+        // hide_member();
         b = false;
         hide_menu();
         a = false;
@@ -503,14 +509,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 @import url("../../static/css/maker/base.css");
 @import url("../../static/css/maker/search.css");
 @import url("../../static/css/maker/layout.css");
 @import url("../../static/css/maker/QMaker.css");
 @import url("../../static/css/maker/swiper.css");
-</style>
-<style >
 @import url("../../static/css/maker/sweetalert2.css");
 @import url("../../static/css/maker/helper.css");
 </style>

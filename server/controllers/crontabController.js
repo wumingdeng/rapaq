@@ -164,7 +164,6 @@ function getRapaqWeb() {
             })
 
             resData.AdvertisementData = AdvertisementData
-            console.log(AdvertisementData)
 
             db.web_pages.update({
                 content: JSON.stringify(resData)
@@ -195,7 +194,7 @@ rule1.second  = times1;
 var rule2 = "0 * * * * *"
 var getWeb = schedule.scheduleJob(rule2, function(){
     console.log(moment().format('YYYY-MM-DD HH:mm:ss'))
-    // getRapaqWeb()
+    getRapaqWeb()
     qmark();
     blog(95);
 })

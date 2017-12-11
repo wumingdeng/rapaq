@@ -3,6 +3,7 @@ var app = express();
 var cfg = require('./config.json')
 var bodyParser = require('body-parser');
 var db = require('./models');
+var path = require('path')
 
 
 
@@ -27,6 +28,9 @@ for(var key in route_table){
 app.get('/', function (req, res) {
   res.send('Hello World');
 });
+
+// static pages if needed
+app.use(express.static(path.join(__dirname, 'public')));
 
 var server = app.listen(cfg.listen, function () {
   var host = server.address().address;

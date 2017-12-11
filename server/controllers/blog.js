@@ -11,7 +11,6 @@ var fc = (blogId)=>{
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(body);
             var data = {}
-            var items = [];
             data['page-header_title'] = $('.page-header__title').text()
             data['page-header__category'] = $('.page-header__category').text()
             data['page-header__date'] = $('.page-header__date').text()

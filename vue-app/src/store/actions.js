@@ -70,3 +70,21 @@ export function getMaker ({commit, state},data) {
       // onErrorRefresh(self);
     });
 }
+export function getBlogById ({commit, state},data) {
+  var self = data.self;
+  console.log("getBlogById")
+  self.$http.post(g.serverAddress+'/api/getBlogById',data.info)
+    .then((response) => {
+      // success callback
+      if (data.callback) {
+        data.callback(self,response)
+      }
+      if(response.body.err){
+        // onErrorHandler(response.body.err)
+        // self.$f7.alert('',response.body.err)
+      }     
+    }, (response) => {
+      // error callback
+      // onErrorRefresh(self);
+    });
+}

@@ -2,10 +2,11 @@ var express = require('express');
 var app = express();
 var cfg = require('./config.json')
 var bodyParser = require('body-parser');
+var path = require('path');
 var db = require('./models');
 var path = require('path')
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 var route_table = require('./routes/routeTable');
 

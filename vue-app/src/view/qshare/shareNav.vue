@@ -137,6 +137,7 @@
 </template>
 
 <script>
+    import sf from '../../../static/js/share/common.js'
 export default {
 
   mounted() {
@@ -181,8 +182,8 @@ export default {
         $menuClick.toggleClass("is--click");
         $mask.show();
         $mask.toggleClass("is--show");
-        didScroll = false;
-        clearInterval(didScrollID);
+        sf.didScroll = false;
+        clearInterval(sf.didScrollID);
     }
     hide_menu = function() {
         if ($(window).width() <= tabletWidth) {
@@ -196,70 +197,70 @@ export default {
         $menuClick.removeClass("is--click");
         $mask.hide();
         $mask.removeClass("is--show");
-        didScroll = true;
-        didScrollID = setTimer();
+        sf.didScroll = true;
+        sf.didScrollID = sf.setTimer();
     }
     show_search = function() {
         $mask.show();
         $mask.toggleClass("is--show");
-        didScroll = false;
-        clearInterval(didScrollID);
+        sf.didScroll = false;
+        clearInterval(sf.didScrollID);
     }
     hide_search = function() {
         $mask.hide();
         $mask.removeClass("is--show");
-        didScroll = true;
-        didScrollID = setTimer();
+        sf.didScroll = true;
+        sf.didScrollID = sf.setTimer();
     }
     show_member = function() {
         $memberContent.stop(true, false).slideDown(200);
         $memberClick.toggleClass('is--mclick');
         $mask.show();
         $mask.toggleClass("is--show");
-        didScroll = false;
-        clearInterval(didScrollID);
+        sf.didScroll = false;
+        clearInterval(sf.didScrollID);
     }
     hide_member = function() {
         $memberContent.stop(true, false).slideUp(200);
         $memberClick.removeClass('is--mclick');
         $mask.hide();
         $mask.removeClass("is--show");
-        didScroll = true;
-        didScrollID = setTimer();
+        sf.didScroll = true;
+        sf.didScrollID = sf.setTimer();
     }
     show_notify = function() {
         $notifyContent.stop(true, false).slideDown(200);
         $notifyClick.toggleClass('is--mclick');
         $mask.show();
         $mask.toggleClass("is--show");
-        didScroll = false;
-        clearInterval(didScrollID);
+        sf.didScroll = false;
+        clearInterval(sf.didScrollID);
     }
     hide_notify = function() {
         $notifyContent.stop(true, false).slideUp(200);
         $notifyClick.removeClass('is--mclick');
         $mask.hide();
         $mask.removeClass("is--show");
-        didScroll = true;
-        didScrollID = setTimer();
+        sf.didScroll = true;
+        sf.didScrollID = sf.setTimer();
     }
     show_creat = function() {
         $creatContent.stop(true, false).fadeIn(200);
         // $creatClick.toggleClass('is--mclick');
         $mask.show();
         $mask.toggleClass("is--show");
-        didScroll = false;
-        clearInterval(didScrollID);
+        sf.didScroll = false;
+        clearInterval(sf.didScrollID);
     }
     hide_creat = function() {
         $creatContent.stop(true, false).fadeOut(200);
         // $creatClick.removeClass('is--mclick');
         $mask.hide();
         $mask.removeClass("is--show");
-        didScroll = true;
+        sf.didScroll = true;
         //0824 fix
         point_creat = false;
-        didScrollID = setTimer();
+        sf.didScrollID = sf.setTimer();
     }
     $menuClick.bind('click', function(e) {
         hide_member();

@@ -13,15 +13,15 @@
  //        Wheight = $(window).height();
  //        Wwidth = $(window).width();
  //    });
- //    function setTimer(){
- //        i = setInterval(function(){
- //            if (didScroll) {
- //                hasScrolled();
- //                didScroll = false;
- //            }
- //        }, 500);
- //        return i;
- //   }
+    function setTimer(){
+        i = setInterval(function(){
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 500);
+        return i;
+   }
     
  //    $(window).scroll(function (event) {
  //        if( a == false && b == false){

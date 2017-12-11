@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper" @scroll.native="onScroll">
+<div class="wrapper">
   <div class="mask" style="display: none;"></div>
   <div class="shareMask" data-id="shareMask"></div>
   <div class="authorMask" data-id="authorMask"></div>
@@ -56,6 +56,8 @@
 	import shareProduct from './shareProduct'
 	import shareAdvertisement from './shareAdvertisement'
 	import cusfooter from '../../components/footer'
+
+	import sf from '../../../static/js/share/common.js'
 	export default {
 	  data () {
 			return {
@@ -99,91 +101,18 @@
 			},
 			onLoad() {
 				console.log('onload')
-			},
-			onScroll() {
-        didScroll = true;
-	    	// console.log('scroll..')
-	    	var worksOffsetTop = $('[data-id="idx_works"]').offset().top;
-	      var worksHeight = $('[data-id="idx_works"]').outerHeight(true);
-	      var worksOffsetBottom = worksOffsetTop + worksHeight;
-	      var winTop = $(window).scrollTop();
-	      var navH = $('nav').outerHeight(true);
-	      if (winTop >= worksOffsetTop && winTop <= worksOffsetBottom) {
-	        $('[data-id="idx_works"]').addClass('docking');
-	        if ($('nav').hasClass('is-hide')) {
-	          $('[data-id="idx_works"]').find('.idxSection__title').css({ 'top': 0 });
-	        } else {
-	          $('[data-id="idx_works"]').find('.idxSection__title').css({ 'top': navH });
-	        }
-	      } else if (winTop > worksOffsetBottom || winTop < worksOffsetTop) {
-	        $('[data-id="idx_works"]').removeClass('docking');
-	      }
-
-			},
-			hasScrolled() {
-	      var delta = 120,
-	      Wheight = $(window).height();
-	      Wwidth = $(window).width();
-		    $(window).resize(function () {
-		        Wheight = $(window).height();
-		        Wwidth = $(window).width();
-		    });
-        clearInterval(didScrollID);
-        var st = $(document).scrollTop();
-        var $Tbottom = $('.wrapper-inner').height() - Wheight - 120;
-        if (st > this.lastScrollTop && st > Wheight){
-            $('.nav').removeClass('is-active').addClass('is-hide');
-            $('.nav-index').removeClass('nav-index--click');
-            
-            if ( st > $Tbottom ) {
-                $('.nav').removeClass('is-hide').addClass('is-active');
-                $('.nav-index').removeClass('nav-index--click');
-                
-            }
-        } else {
-            if(st + Wheight < $('.wrapper-inner').height()) {
-                $('.nav').removeClass('is-hide').addClass('is-active');
-                
-            }
-        }
-        if (st < $(".nav-content").height()) {
-            $('.nav-index').addClass('nav-index--click');
-            $('.mainbar-aside-search input').removeClass('is--focus');
-        } else {
-            $('.nav-index').removeClass('nav-index--click');
-        }
-        
-        this.lastScrollTop = st;
-        didScrollID = this.setTimer();
-	    },
-	    setTimer(){
-	    	var self = this
-        var i = setInterval(function(){
-          if (didScroll) {
-        		// console.log('do scro')
-            self.hasScrolled();
-            didScroll = false;
-          }
-        }, 500);
-        return i;
-	    }
+			}
 		},
 		created() {
-			console.log('create...')
-			//nav
-			$('.nav-load').load('/nav');
-	    didScrollID = this.setTimer();
-	    didScroll = false
-	    // $(document).scroll(function (event) {
-	    //     if( a == false && b == false){
-	    //         didScroll = true;
-	    //     }
-	    // });
+			console.log('hehe?')
+			sf.init()
 		},
 		mounted() {
 			console.log('mounted...')
 			this.getWeb()
-			$(window).scroll(this.onScroll);
+		},
+		beforeDestroy() {
+			sf.distroy()
 		}
 	}
 </script>

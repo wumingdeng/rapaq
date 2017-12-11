@@ -8,7 +8,6 @@ import store from './store'
 require('../static/js/share/index-helper.js')
 // require('../static/js/common.js')
 
-// require('../static/js/common.js')
 
 import VueResource from 'vue-resource'
 Vue.use(VueResource)

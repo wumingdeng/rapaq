@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="tab__action">
-            <a href="https://qshare.rapaq.com/works/index" class="btn btn--idx btn--main btn--arrow">更多作品</a>
+            <a href="https://qshare.rapaq.com/works/index" class="btn btn--idx btn--main btn--arrow" target="_self">更多作品</a>
           </div>
         </div>
         <div class="tab_panel" data-id="js-panel" data-tab-id="02">
@@ -72,9 +72,8 @@
               </a>
             </div>
           </div>
-          </div>
           <div class="tab__action">
-            <a href="https://qshare.rapaq.com/works/index" class="btn btn--idx btn--main btn--arrow">更多作品</a>
+            <a href="https://qshare.rapaq.com/works/index" class="btn btn--idx btn--main btn--arrow" target="_blank">更多作品</a>
           </div>
         </div>
         <div class="tab_panel" data-id="js-panel" data-tab-id="03" style="display: none;">
@@ -105,7 +104,6 @@
                 </div>
               </a>
             </div>
-          </div>
           </div>
           <div class="tab__action">
             <a href="https://qshare.rapaq.com/works/index" class="btn btn--idx btn--main btn--arrow">更多作品</a>

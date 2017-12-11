@@ -136,75 +136,22 @@
                 <div class="project-wrap section-wrap">
                     <div class="project__title title-b">未來計畫</div>
                     <div class="project-list">
-                        <ul class="swiper-wrapper ">
-                            <li class="swiper-slide">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide" v-for="(item,index) in resData.blog" :key="index">
                                 <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/96">
-                                        <img src="https://qmaker.rapaq.com/img/article/article_01.png" alt="">
-                                    </a>
+                                    <router-link :to="{name:'blog', params: { id: item.index }}">
+                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                     </router-link>
                                 </div>
                                 <div class="list-include">
                                     <div class="list-top">
                                         <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/96">{{resData.list_title0}}</a>
+                                            <router-link :to="{name:'blog', params: { id: item.index }}">{{item.title}}</router-link>
                                         </div>
                                     </div>
                                     <div class="list__intro">
-                                        {{resData.list_intro0}}
+                                        {{item.intro}}
                                     </div>
-                                   
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="list__pic">
-                                    <router-link :to="{name:'blog', params: { id: 95 }}">
-                                        <img src="https://qmaker.rapaq.com/img/article/article_02.png" alt="">
-                                    </router-link>
-                                </div>
-                                <div class="list-include">
-                                    <div class="list-top">
-                                        <div class="list-top__title">
-                                            <router-link :to="{name:'blog', params: { id: 95 }}">{{resData.list_title1}}</router-link>
-                                        </div>
-                                    </div>
-                                    <div class="list__intro">
-                                        {{resData.list_intro1}}
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/97">
-                                        <img src="https://qmaker.rapaq.com/img/article/article_03.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="list-include">
-                                    <div class="list-top">
-                                        <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/97">{{resData.list_title2}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="list__intro">
-                                        {{resData.list_intro2}}
-                                    </div>
-                                </div>
-                            </li>                            
-                            <li class="swiper-slide">
-                                <div class="list__pic">
-                                    <a href="https://qshare.rapaq.com/blog/show/94">
-                                        <img src="https://qmaker.rapaq.com/img/article/article_04.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="list-include">
-                                    <div class="list-top">
-                                        <div class="list-top__title">
-                                            <a href="https://qshare.rapaq.com/blog/show/94">{{resData.list_title3}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="list__intro">
-                                        {{resData.list_intro3}}
-                                    </div>
-                                   
                                 </div>
                             </li>
                         </ul>
@@ -221,234 +168,23 @@
                     </ul>
                     <div class="life-routine">
                         <ul class="swiper-wrapper">
-                                                        <li class="swiper-slide">
+                            <li class="swiper-slide" v-for="(item,index) in resData.company" :key="index">
                                 <div class="life-routine__pic">
                                     <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/banner@2x.png" alt="">
-                                                                            </a>
+                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                    </a>
                                 </div>
                                 <div class="life-routine-text">
                                     <div class="life-routine-text__title list__title">
                                         <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                            {{resData.life_company0}}
+                                            {{item.title}}
                                         </a>
                                     </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro0}}</div>
+                                    <div class="life-routine-text__intro">{{item.intro}}</div>
                                 </div>
                             </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/2"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/banner@2x.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/2"> 
-                                            {{resData.life_company1}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro1}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/3"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/3.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/3"> 
-                                            {{resData.life_company2}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro2}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/4"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/4.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/4"> 
-                                            {{resData.life_company3}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro3}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/5"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/5.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/5"> 
-                                             {{resData.life_company4}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro4}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/6"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/6.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/6"> 
-                                            {{resData.life_company5}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro5}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/7"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/7.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/7"> 
-                                              {{resData.life_company6}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro6}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/8"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/8.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/8"> 
-                                             {{resData.life_company7}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro"> {{resData.life_company_intro7}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/9"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/9.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/9"> 
-                                             {{resData.life_company8}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro"> {{resData.life_company_intro8}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/10"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/10.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/10"> 
-                                             {{resData.life_company9}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro9}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/11"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/11.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/11"> 
-                                            {{resData.life_company10}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro10}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/12"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/12.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/12"> 
-                                            {{resData.life_company11}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro11}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/13"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/13.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/13"> 
-                                             {{resData.life_company12}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro12}}</div>
-                                </div>
-                            </li> 
-                                                        <li class="swiper-slide">
-                                <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/14"> 
-                                                                                <img src="https://qmaker.rapaq.com/img/factory/14.png" alt="">
-                                                                            </a>
-                                </div>
-                                <div class="life-routine-text">
-                                    <!--div class="list__like"></div-->
-                                    <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/14"> 
-                                              {{resData.life_company13}}
-                                        </a>
-                                    </div>
-                                    <div class="life-routine-text__intro">{{resData.life_company_intro13}}</div>
-                                </div>
-                            </li> 
-                                                     
                         </ul>
-               
                     </div>
-                                          
                 </div>
             </section>
             <section class="dream">
@@ -486,7 +222,7 @@ export default {
         (window.Global.isDev ? "static/" : "") + "img/maker/banner02.jpg",
       banner03:
         (window.Global.isDev ? "static/" : "") + "img/maker/banner03.jpg",
-      resData: {},
+      resData: {}
     };
   },
   methods: {
@@ -497,6 +233,9 @@ export default {
         info: {},
         callback(self, res) {
           self.resData = res.body;
+          self.$nextTick(function() {
+            self.oninitJs()					
+        })
         }
       });
     },
@@ -757,10 +496,7 @@ export default {
   },
   created() {},
   mounted() {
-    var self = this;
-   
     this.getWeb();
-    this.oninitJs();
     this.onHeadScroll();
   }
 };
@@ -768,11 +504,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "../../static/css/maker/base.css";
-@import "../../static/css/maker/search.css";
-@import "../../static/css/maker/swiper.css";
-@import "../../static/css/maker/sweetalert2.css";
-@import "../../static/css/maker/QMaker.css";
-@import "../../static/css/maker/helper.css";
-@import "../../static/css/maker/layout.css";
+@import url("../../static/css/maker/base.css");
+@import url("../../static/css/maker/search.css");
+@import url("../../static/css/maker/layout.css");
+@import url("../../static/css/maker/QMaker.css");
+@import url("../../static/css/maker/swiper.css");
+</style>
+<style >
+@import url("../../static/css/maker/sweetalert2.css");
+@import url("../../static/css/maker/helper.css");
 </style>

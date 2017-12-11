@@ -21,18 +21,18 @@ var fc = ()=>{
                     var img_filename =img_src.substring(img_src.lastIndexOf('/')+1,img_src.length)
                     if(img_src.indexOf('factory')>=0){
                         img_filename = 'factory'+img_filename
-                        data['factory'].push('public/img/qmark/'+img_filename)
+                        data['factory'].push('/img/qmark/'+img_filename)
                     }
                     if(img_src.indexOf('article')>=0){
-                        data['article'].push('public/img/qmark/'+img_filename)
+                        data['article'].push('/img/qmark/'+img_filename)
                     }
                     if(img_src.indexOf('banner')>=0){
-                        data['factory'].unshift('public/img/qmark/'+img_filename)
+                        data['factory'].unshift('/img/qmark/'+img_filename)
                     }
                     request(img_src).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
                 }else{
                     var img_filename =img_src.substring(img_src.lastIndexOf('/')+1,img_src.length)
-                    data['banner'].push('public/img/qmark/'+img_filename)
+                    data['banner'].push('/img/qmark/'+img_filename)
                     request(options.url+'/img/'+img_filename).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
                 }
             })
@@ -67,9 +67,9 @@ var fc = ()=>{
             delete data['factory']
 
             console.log(data)
-            // db.web_pages.upsert({
-            //     id:2,content:JSON.stringify(data)
-            // })
+            db.web_pages.upsert({
+                id:2,content:JSON.stringify(data)
+            })
         }else{
             console.log(error)
         }

@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var cfg = require('./config.json')
+var g = require('./global')
 var bodyParser = require('body-parser');
 var path = require('path');
 var db = require('./models');
@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 // static pages if needed
 app.use(express.static(path.join(__dirname, 'public')));
 
-var server = app.listen(cfg.listen, function () {
+var server = app.listen(g.cfg.listen, function () {
   var host = server.address().address;
   var port = server.address().port;
 

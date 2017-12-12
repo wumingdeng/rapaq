@@ -31,30 +31,33 @@ web_router.route('/getBlogById').post(function (req, res) {
 })
 
 var http = require('http')
+var https = require('https')
 
 
 web_router.route('/test').get(function(req, res) {
 		var newUrl = utils.downloadRes()
 		res.send(newUrl)
-    // var options={
-    //     // "url":"https://lh3.googleusercontent.com/yYgMdJ4Qw62IDZeYrqBjzolfKZZf2CB-a5QDRUL5CvrEO_cySi1kUEcELoLUvoqGukagsHuOddKAuJwJUeyjKnuDIA=s340",
-    //    url: 'https://www.google.com',
-    //    method:"CONNECT",
-    //    proxy: 'https://35.194.190.225:2888'
-    // }
-    // console.log('test...')
-    // request(options,function(error, response, body){
-    // 	console.log(error)
-    // 	res.send(body)
-    // })
-  //   var auth = new Buffer('diablo.diabloo').toString('base64')
+   //  var options={
+   //      "url":"https://lh3.googleusercontent.com/yYgMdJ4Qw62IDZeYrqBjzolfKZZf2CB-a5QDRUL5CvrEO_cySi1kUEcELoLUvoqGukagsHuOddKAuJwJUeyjKnuDIA=s340",
+   //     // url: 'https://www.google.com',
+   //     // url: 'https://www.baidu.com',
+   //     method:"GET",
+   //     proxy: 'http://127.0.0.1:8118'
+   //  }
+   //  console.log('test...')
+   //  request(options,function(error, response, body){
+   //  	console.log(error)
+   //  	res.send(body)
+   //  })
+  	// console.log('api/test')
 		// var opt = {
-		// 	host:'35.194.190.225',
-		// 	port:'2888',
+		// 	host:'127.0.0.1',
+		// 	port:'8118',
 		// 	method:'GET',//这里是发送的方法
-		// 	path: 'https://www.baidu.com',     //这里是访问的路径
+		// 	// path: 'https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=3785121226,4185290697&fm=202&w_h=121_75&cs=3785121226,4185290697&ow_h=121_75&src=201&mola=new&crop=v1',
+		// 	path: 'https://www.google.com',
 		// 	headers:{
-  //       'Proxy-Authorization':'Basic '+auth
+		// 		'Content-Type': 'image/jpeg'
 		// 	}
 		// }
 		// //以下是接受数据的代码
@@ -70,6 +73,7 @@ web_router.route('/test').get(function(req, res) {
 		// 	});
 
 		// }).on('error', function(e) {
+		// 	console.log(e)
 		//   console.log("Got error: " + e.message);
 		// })
 		// requ.end()

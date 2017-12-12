@@ -7,5 +7,7 @@
   "dbname":"rapaq",
   "dialect":"mysql",
   "poolsize":5,
-  "listen":3000
+  "listen":3000,
+  "proxy": "127.0.0.1:8118",
+  "host": "http://121.40.254.174:3000"
 }

@@ -5,9 +5,9 @@
             <div class="nav-load">
             <div class="nav-content">
         <div class="nav-content-mainbar">
-            <div class="mainbar__logo">
+            <div class="mainbar__logo" style="background-color: transparent">
                 <a href="/">
-                    <div class="mainbar__logo__logo"></div>
+                    <div class="mainbar__logo__logo" ></div>
                 </a>
             </div>
             <div class="mainbar-aside">
@@ -219,7 +219,8 @@ export default {
       banner01:"static/img/maker/banner01.jpg",
       banner02:"static/img/maker/banner02.jpg",
       banner03:"static/img/maker/banner03.jpg",
-      resData: {}
+      resData: {},
+      didScrollID:{}
     };
   },
   methods: {
@@ -242,6 +243,7 @@ export default {
     onHeadScroll() {
         var _self = this
         var didScrollID = setTimer();
+        this.didScrollID = didScrollID
         var lastScrollTop = 0,
             didScroll = false,
             a = false,
@@ -504,17 +506,23 @@ export default {
   mounted() {
     this.getWeb();
     this.onHeadScroll();
-  }
+  },
+  beforeDestroy() {
+        if(this.didScrollID) {
+            clearInterval(this.didScrollID);
+        }
+        $(window).off('scroll')
+    }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 @import url("../../static/css/maker/base.css");
 @import url("../../static/css/maker/search.css");
 @import url("../../static/css/maker/layout.css");
 @import url("../../static/css/maker/QMaker.css");
 @import url("../../static/css/maker/swiper.css");
+</style>
+<style>
 @import url("../../static/css/maker/sweetalert2.css");
 @import url("../../static/css/maker/helper.css");
 </style>

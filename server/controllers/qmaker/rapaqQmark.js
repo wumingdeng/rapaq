@@ -66,7 +66,7 @@ var fc = ()=>{
             delete data['article']
             delete data['factory']
 
-            console.log(data)
+            // console.log(data)
             db.web_pages.upsert({
                 id:2,content:JSON.stringify(data)
             })

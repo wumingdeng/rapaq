@@ -5,7 +5,8 @@ var https = require("https");
 var request = require('request')
 var mkdirp = require('mkdirp');
 var fs = require('fs');
-var cfg = require('../config.json')
+var g = require('./global')
+var cfg = g.cfg
 var getDirName = require('path').dirname;
 
 var useProxyList = [

@@ -5,9 +5,9 @@
             <div class="nav-load">
             <div class="nav-content">
         <div class="nav-content-mainbar">
-            <div class="mainbar__logo">
+            <div class="mainbar__logo" style="background-color: transparent">
                 <a href="/">
-                    <div class="mainbar__logo__logo"></div>
+                    <div class="mainbar__logo__logo" ></div>
                 </a>
             </div>
             <div class="mainbar-aside">
@@ -140,7 +140,7 @@
                             <li class="swiper-slide" v-for="(item,index) in resData.blog" :key="index">
                                 <div class="list__pic">
                                     <router-link :to="{name:'blog', params: { id: item.index }}">
-                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                        <img :src="getImgSrc(item.img)" alt="">
                                      </router-link>
                                 </div>
                                 <div class="list-include">
@@ -171,7 +171,7 @@
                             <li class="swiper-slide" v-for="(item,index) in resData.company" :key="index">
                                 <div class="life-routine__pic">
                                     <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                        <img :src="'http://localhost:3000/'+item.img" alt="">
+                                        <img :src="getImgSrc(item.img)" alt="">
                                     </a>
                                 </div>
                                 <div class="life-routine-text">
@@ -216,16 +216,17 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App",
       curDom: {},
-      banner01:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner01.jpg",
-      banner02:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner02.jpg",
-      banner03:
-        (window.Global.isDev ? "static/" : "") + "img/maker/banner03.jpg",
-      resData: {}
+      banner01:"static/img/maker/banner01.jpg",
+      banner02:"static/img/maker/banner02.jpg",
+      banner03:"static/img/maker/banner03.jpg",
+      resData: {},
+      didScrollID:{}
     };
   },
   methods: {
+    getImgSrc(fileName){
+        return window.Global.serverAddress+'/'+fileName
+    },
     alertDismissed() {},
     getWeb() {
       this.$store.dispatch("getMaker", {
@@ -242,6 +243,7 @@ export default {
     onHeadScroll() {
         var _self = this
         var didScrollID = setTimer();
+        this.didScrollID = didScrollID
         var lastScrollTop = 0,
             didScroll = false,
             a = false,
@@ -311,6 +313,7 @@ export default {
         $mask.show();
         $mask.toggleClass("is--show");
         didScroll = false;
+        a = true
         clearInterval(didScrollID);
         $('.nav-index').removeClass("nav-index--click");
         $('.mainbar-aside-search input').addClass('is--focus');
@@ -319,6 +322,7 @@ export default {
         $mask.hide();
         $mask.removeClass("is--show"); 
         didScroll = true;
+        a = false
         didScrollID = setTimer();
         $('.mainbar-aside-search input').removeClass('is--focus');
         
@@ -336,6 +340,7 @@ export default {
         $('.nav-index').removeClass("nav-index--click");
     }
     function hide_member(){
+        console.log('yinchang')
         $memberContent.stop(true, false).slideUp(200);
         $memberClick.removeClass('is--mclick');
         $loginClick.toggleClass('is--mclick');
@@ -347,12 +352,14 @@ export default {
     }
     
     function show_menu(){
+        console.log('show_menu')
         if (Wwidth <= 768) {
             $('.nav').toggleClass('is--absolute');
             $('.nav-content-mainbar').toggleClass('is--fixed add--z-index100');
             $('.mainbar__logo').toggleClass('is--fixed add--z-index100 add--background-color-fff');
             $('.mainbar-aside').toggleClass('is--fixed add--z-index100');
             $menuContent.toggleClass('add--z-index50');
+            $('.wrapper-index, .wrapper-inner').toggleClass('is--zeroheight');
             $('.wrapper-index, .wrapper-inner').toggleClass('is--zeroheight');
         }
         $menuContent.stop(true, false).slideDown(200);
@@ -364,6 +371,7 @@ export default {
         $('.nav-index').removeClass("nav-index--click");
     }
     function hide_menu(){
+        console.log('hide_menu')
         if (Wwidth <= 768) {
             $('.nav').removeClass('is--absolute');
             $('.nav-content-mainbar').removeClass('is--fixed add--z-index100');
@@ -448,7 +456,7 @@ export default {
         
     });
     $(window).resize(function () {
-        hide_member();
+        // hide_member();
         b = false;
         hide_menu();
         a = false;
@@ -498,11 +506,15 @@ export default {
   mounted() {
     this.getWeb();
     this.onHeadScroll();
-  }
+  },
+  beforeDestroy() {
+        if(this.didScrollID) {
+            clearInterval(this.didScrollID);
+        }
+        $(window).off('scroll')
+    }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url("../../static/css/maker/base.css");
 @import url("../../static/css/maker/search.css");
@@ -510,7 +522,7 @@ export default {
 @import url("../../static/css/maker/QMaker.css");
 @import url("../../static/css/maker/swiper.css");
 </style>
-<style >
+<style>
 @import url("../../static/css/maker/sweetalert2.css");
 @import url("../../static/css/maker/helper.css");
 </style>

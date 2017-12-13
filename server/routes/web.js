@@ -37,19 +37,20 @@ var https = require('https')
 web_router.route('/test').get(function(req, res) {
 		var newUrl = utils.downloadRes()
 		res.send(newUrl)
-   //  var options={
-   //      "url":"https://lh3.googleusercontent.com/yYgMdJ4Qw62IDZeYrqBjzolfKZZf2CB-a5QDRUL5CvrEO_cySi1kUEcELoLUvoqGukagsHuOddKAuJwJUeyjKnuDIA=s340",
-   //     // url: 'https://www.google.com',
-   //     // url: 'https://www.baidu.com',
-   //     method:"GET",
-   //     proxy: 'http://127.0.0.1:8118'
-   //  }
-   //  console.log('test...')
-   //  request(options,function(error, response, body){
-   //  	console.log(error)
-   //  	res.send(body)
-   //  })
-  	// console.log('api/test')
+    // var options={
+    //     "url":"https://lh3.googleusercontent.com/yYgMdJ4Qw62IDZeYrqBjzolfKZZf2CB-a5QDRUL5CvrEO_cySi1kUEcELoLUvoqGukagsHuOddKAuJwJUeyjKnuDIA=s340",
+    //    // url: 'https://www.google.com',
+    //    // url: 'https://www.baidu.com',
+    //    method:"GET",
+    //    proxy: 'http://127.0.0.1:8118'
+    // }
+    // console.log('test...')
+    // var fs = require('fs')
+    // request(options,function(error, response, body){
+    // 	console.log(error)
+    // 	res.send(body)
+    // }).pipe(fs.createWriteStream('./public/test/huhu.png'));
+  // 	console.log('api/test')
 		// var opt = {
 		// 	host:'127.0.0.1',
 		// 	port:'8118',

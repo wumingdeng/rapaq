@@ -189,7 +189,7 @@
         <h3>發掘其他文章</h3>
         <div id="scrolling-other">
             <div class="idxSection__main idxSection__main--action">
-        <div class="idxList idxList--blog clearfix">
+        <div class="idxList idxList--blog clearfix" style="min-width: 1080px;">
             <!--<ul class="b-other-all" style="touch-action: pan-y;width: 1026px; transform: translate3d(-599px, 0px, 0px);"> -->
             
                             <li class="b-other-all-box">

@@ -1,3 +1,4 @@
+
 var fs = require('fs')
 var cheerio = require('cheerio')
 var request = require('request')
@@ -70,7 +71,7 @@ var fc = ()=>{
                 data['blog'][idx] = blog
             });
             $('div.list__intro').each(function (idx, element) {
-                let blog = data['blog'][idx]
+                var blog = data['blog'][idx]
                 blog['intro'] = $(this).text()
             });
             data['company'] = []
@@ -83,7 +84,7 @@ var fc = ()=>{
                 data['company'][idx] = company
             });
             $('div.life-routine-text__intro').each(function (idx, element) {
-                let company = data['company'][idx]
+                var company = data['company'][idx]
                 company['intro'] = $(this).text()
             });
             delete data['article']

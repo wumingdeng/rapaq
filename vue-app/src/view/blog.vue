@@ -8,9 +8,9 @@
             <div class="nav-content">
     <div class="nav-content-mainbar">
         <div class="mainbar__logo">
-            <a href="https://qshare.rapaq.com/index">
+            <router-link :to="{name:'share'}">
                 <div class="mainbar__logo__logo"></div>
-            </a>
+            </router-link>
         </div>
         <div class="mainbar-aside">
             <div class="mainbar-aside__click">
@@ -138,7 +138,7 @@
     <div class="b-contents-wrap">
         <div class="b-contents-page">
             <div class="page-bcover">
-                <img itemprop="image" src="https://lh3.googleusercontent.com/zShWVAdg7GsFiJF1_8tFimyAKHpwvfhTfyvaQeW4Xod83dXzDYhsl1r0XGdjeOHOY-hAl_ok-NqlYs9Yg1jJ4G7xdg=s1410" alt="[創創集資] Sansui -&nbsp;山水盒，打造個人桌面景致">
+                <img itemprop="image" :src="html['page-bcover']" alt="[創創集資] Sansui -&nbsp;山水盒，打造個人桌面景致">
             </div>
             <div class="page-inner pb0">
                 <div class="page-header page-header--blog" data-id="js-pageHeader">
@@ -151,57 +151,6 @@
                         <meta itemprop="datePublished dateModified" content="2017-11-02">
                         <div class="page-header__freq frequency">
                             {{html['page-header__freq']}}                                                                             </div>
-                    </div>
-
-                    <div class="page-header__action page-header__action--blog">
-                        <div class="page-header-icons">
-                                                                                                <div class="icons__save create_collect" primary_id="95" type="2"></div>
-                                                                                        <div class="icons__share"></div>
-                            <div class="icons__edit"></div>
-                        </div>
-                        <div class="sharestyle" style="display: none; bottom: -300px;">
-    <div class="sharestyle-center">
-        <div class="share__title">分享</div>
-        <div id="scrolling-icons">
-            <ul class="share-icons" primary_id="95" current_url="" style="touch-action: pan-y; -moz-user-select: none; width: 226px; transform: translate3d(0px, 0px, 0px);" type="2">
-                                
-                    <li class="share-icons__qs itemslide-active">
-                        <img src="https://qshare.rapaq.com/img/icons/share-qshare.svg " alt="">
-                    </li>
-                                <li class="share-icons__fb">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://qshare.rapaq.com/blog/show/95" target="_blank"><img src="https://qshare.rapaq.com/img/icons/share-fb.svg " alt=""></a>
-                </li>
-                
-                <li class="share-icons__li">
-                    <div class="line-it-button" data-lang="zh_Hant" data-type="share-d" data-url="http://qshare.rapaq.com/blog/show/95" style="display: none;"></div>
-                </li>
-                <li class="share-icons__wb">
-                    <a href="http://service.weibo.com/share/share.php?url=http://qshare.rapaq.com/blog/show/95&amp;title=[創創集資] Sansui -&nbsp;山水盒，打造個人桌面景致&amp;pic=https://lh3.googleusercontent.com/zShWVAdg7GsFiJF1_8tFimyAKHpwvfhTfyvaQeW4Xod83dXzDYhsl1r0XGdjeOHOY-hAl_ok-NqlYs9Yg1jJ4G7xdg" target="_blank"><img src="https://qshare.rapaq.com/img/icons/share-weibo.svg " alt=""></a>
-                </li>
-            </ul>
-            <div class="share__triangle triangle-shadow"></div>
-            <div class="share__triangle"></div>
-            <div class="share-href">
-                <input class="share-href__copy" type="button">
-                <input class="share-href__input" value="http://qshare.rapaq.com/blog/show/95" type="text">
-            </div>
-            <div class="share__cancel">
-                <span>取消</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                        <div class="report">
-                        </div>
-                        <div class="page-header-more" style="display: none;">
-                            <ul class="more-item" primary_id="95" type_id="2">
-                                                                    <li class="rrr" report_type="2">檢舉</li>
-                                                            </ul>
-                            <div class="more__triangle triangle-shadow"></div>
-                            <div class="more__triangle"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -218,15 +167,12 @@
                         <div class="page-inner-author__name" itemprop="name">RapaQ 創創</div>
                     </span>
                     <div class="page-inner-author__status">創設計・找合夥</div>
-
-                    
                     <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
                         <meta itemprop="name" content="Rapaq 社群">
                         <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
                             <meta itemprop="url" content="https://storage.googleapis.com/rapaq_public/browser_icon/qshare.ico">
                         </div>
                     </div>
-
                 </div>
                 <div class="page-inner-btns">
                                                             <div class="page-inner-btns__btn btn-follow btn-style-small create_follow" followed_userid="100000233">追蹤</div>
@@ -238,11 +184,14 @@
         </div>
     </div>
 </section>
-<section class="b-other">
+<section class="b-other" style="padding-top:20px">
     <div class="b-other-wrap">
         <h3>發掘其他文章</h3>
         <div id="scrolling-other">
-            <ul class="b-other-all" style="touch-action: pan-y; -moz-user-select: none; width: 1026px; transform: translate3d(-599px, 0px, 0px);">
+            <div class="idxSection__main idxSection__main--action">
+        <div class="idxList idxList--blog clearfix" style="min-width: 1080px;">
+            <!--<ul class="b-other-all" style="touch-action: pan-y;width: 1026px; transform: translate3d(-599px, 0px, 0px);"> -->
+            
                             <li class="b-other-all-box">
                     <div class="box__pic">
                         <a href="https://qshare.rapaq.com/blog/show/101"><img src="https://lh3.googleusercontent.com/KPmrwhj6NSI9AOfOULtvZ6dL9szQiRhamNzrNjz-AKl2qYdbQ1SOY2M_11IfplF0s4iGY5uvY4KZH8CTT5LEdKlS=h420" alt="噴墨式太陽能電池板，讓 T恤、窗簾都可成為電力來源"></a>
@@ -306,7 +255,7 @@
                         <a href="https://qshare.rapaq.com/blog/show/96">[創創集資] 你的第一件，享受聽覺的休閒服</a>
                     </div>
                 </li>
-                            <li class="b-other-all-box itemslide-active">
+                            <li class="b-other-all-box">
                     <div class="box__pic">
                         <a href="https://qshare.rapaq.com/blog/show/94"><img src="https://lh3.googleusercontent.com/bQWDUVwx8lAu5J_1c6kUUzmQmDZyd8fsOc6JmCrEZK3miSnVxWVaAdISKwBAdRUJAqigyfDuXV9BxeuGDYdvc0K6=h420" alt="[創創集資] 用太陽充電，用背包補水－至誼享樂不斷電背包"></a>
                     </div>
@@ -327,7 +276,8 @@
                         <a href="https://qshare.rapaq.com/blog/show/94">[創創集資] 用太陽充電，用背包補水－至誼享樂不斷電背包</a>
                     </div>
                 </li>
-                        </ul>
+                        <!--</ul>-->
+        </div></div>
         </div>
     </div>
 </section>
@@ -377,25 +327,24 @@
 </template>
 
 <script>
-require('../../static/js/blog/custom.js')
+import sf from "../../static/js/blog/custom.js"
 export default {
   data() {
     return {
       loading: false,
       html: {},
-      url: "https://qgoods.rapaq.com",
-      blogId:0,
-      resData:{}
+      blogId: 0,
+      resData: {}
     };
   },
   methods: {
     getWeb(fb) {
       this.$store.dispatch("getBlogById", {
         self: this,
-        info: {id:this.blogId},
+        info: { id: this.blogId },
         callback(self, res) {
           self.html = res.body;
-            fb();
+          fb();
         }
       });
     },
@@ -403,28 +352,31 @@ export default {
       console.log("onload");
     }
   },
+  	created() {
+			console.log('hehe?')
+			sf()
+		},
   mounted() {
-      this.blogId = this.$route.params.id || 95
-      this.getWeb(()=>{
-          document.getElementById('page-inner').innerHTML = this.html['page-inner']
-      })
-
+    this.blogId = this.$route.params.id || 1;
+    this.getWeb(() => {
+      document.getElementById("page-inner").innerHTML = this.html["page-inner"];
+    });
   }
 };
 </script>
 
 <style>
-	@import url('../../static/css/share/swiper.css');
-	@import url('../../static/css/share/slick.css');
-	@import url('../../static/css/share/base.css');
-	@import url('../../static/css/share/layout.css');
-	@import url('../../static/css/share/sweetalert2.css');
-	@import url('../../static/css/share/step.css');
-	@import url('../../static/css/share/create.css');
-	@import url('../../static/css/share/loading.css');
-	@import url('../../static/css/share/helper.css');
-	@import url('../../static/css/share/works.css');
-	@import url('../../static/css/share/index.css');
-	@import '../../static/css/share/page.css';
-	@import url('../../static/css/share/classify.css');
+@import url("../../static/css/share/swiper.css");
+@import url("../../static/css/share/slick.css");
+@import url("../../static/css/share/base.css");
+@import url("../../static/css/share/layout.css");
+@import url("../../static/css/share/sweetalert2.css");
+@import url("../../static/css/share/step.css");
+@import url("../../static/css/share/create.css");
+@import url("../../static/css/share/loading.css");
+@import url("../../static/css/share/helper.css");
+@import url("../../static/css/share/works.css");
+@import url("../../static/css/share/index.css");
+@import "../../static/css/share/page.css";
+@import url("../../static/css/share/classify.css");
 </style>

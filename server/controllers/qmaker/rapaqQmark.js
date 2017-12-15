@@ -1,12 +1,23 @@
+
 var fs = require('fs')
 var cheerio = require('cheerio')
 var request = require('request')
 var db = require('../../models')
+var mkdirp = require('mkdirp');
 var fc = ()=>{
     var options={
         "url":"https://qmaker.rapaq.com",
         "method":"get"
     }
+    fs.stat('./public/img/qmark',(err,stats)=>{
+        if(err){
+            mkdirp('./public/img/qmark',(err)=>{
+                if(err){
+                    return
+                }
+            })
+        }
+    })
     request(options,function(error, response, body){
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(body);
@@ -17,7 +28,6 @@ var fc = ()=>{
             $('img').each((idx,element)=>{
                 var img_src = $(element).attr('src')
                 if(img_src.indexOf('https:')>=0){
-                    // var img_filename = img_src.substring(img_src.indexOf('img/')+'img/'.length,img_src.lastIndexOf('/'))
                     var img_filename =img_src.substring(img_src.lastIndexOf('/')+1,img_src.length)
                     if(img_src.indexOf('factory')>=0){
                         img_filename = 'factory'+img_filename
@@ -29,11 +39,25 @@ var fc = ()=>{
                     if(img_src.indexOf('banner')>=0){
                         data['factory'].unshift('/img/qmark/'+img_filename)
                     }
-                    request(img_src).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
+                    request(img_src,(err)=>{
+                        if(err){
+                            console.log("rapaqQmaker error:"+error)
+                            return
+                        }
+                    }).on('error',(err)=>{
+                        console.log("rapaqQmaker error:"+err)
+                    }).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
                 }else{
                     var img_filename =img_src.substring(img_src.lastIndexOf('/')+1,img_src.length)
                     data['banner'].push('/img/qmark/'+img_filename)
-                    request(options.url+'/img/'+img_filename).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
+                    request(options.url+'/img/'+img_filename,(err)=>{
+                        if(err){
+                            console.log("rapaqQmaker error:"+error)
+                            return
+                        }
+                    }).on('error',(err)=>{
+                        console.log("rapaqQmaker error:"+err)
+                    }).pipe(fs.createWriteStream('./public/img/qmark/'+ img_filename));
                 }
             })
 
@@ -66,7 +90,6 @@ var fc = ()=>{
             delete data['article']
             delete data['factory']
 
-            // console.log(data)
             db.web_pages.upsert({
                 id:2,content:JSON.stringify(data)
             })

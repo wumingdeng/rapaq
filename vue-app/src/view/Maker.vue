@@ -187,7 +187,7 @@
                     </div>
                 </div>
             </section>
-            <section class="dream">
+            <section class="dream" style="background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/static/img/start.jpg')">
                 <div class="dream-wrap section-wrap">
                     <div class="dream__title title-w">
                         <span class="dreamword01">攜眾人之力</span>

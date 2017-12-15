@@ -19,12 +19,10 @@ web_router.route('/getMaker').get(function (req, res) {
 })
 
 web_router.route('/getBlogById').post(function (req, res) {
-	
 	var idx =  req.body.id;
 	console.log("blog:"+idx)
 	db.blog_pages.findOne({where: {id: idx}}).then(function(data) {
 		if(data){
-			console.log(JSON.parse(data.content))
 			res.send(JSON.parse(data.content))
 		}
 	})

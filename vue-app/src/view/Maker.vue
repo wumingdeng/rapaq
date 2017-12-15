@@ -4,7 +4,7 @@
         <nav class="nav nav-index nav-index--click">
             <div class="nav-load">
             <div class="nav-content">
-        <div class="nav-content-mainbar">
+        <div class="nav-content-mainbar" style='top:0px'>
             <div class="mainbar__logo" style="background-color: transparent">
                 <a href="/">
                     <div class="mainbar__logo__logo" ></div>
@@ -33,7 +33,7 @@
                   
             </div>
         </div>
-        <div class="nav-content-toggle is--hide" style="display: none">
+        <div class="nav-content-toggle is--hide" style="display: none;top:50px">
             <div class="toggle__search">
                 <input placeholder="請輸入關鍵字" class="search__input" name="keyword" type="text">
                 <form action="https://qmaker.rapaq.com/explore/search" method="POST" id="search_form_nav" enctype="multipart/form-data">
@@ -51,7 +51,7 @@
                 <li class="toggle-webs__1">
                     <a href="https://www.rapaq.com" style="color:#fff">
                     <div>RAPAQ</div>
-                    <div class="webs__bg"></div>  
+                    <div class="webs__bg_1"></div>  
                     </a>
                 </li>
                 <li class="toggle-webs__4">
@@ -62,7 +62,7 @@
                         <span>Q’Share</span>
                         </a>
                     </div>
-                    <div class="webs__bg"></div> 
+                    <div class="webs__bg_2"></div> 
                 </li>
                 <li class="toggle-webs__2">
                     <div>
@@ -72,7 +72,7 @@
                         <span>Q’Goods</span>
                         </a>
                     </div>
-                    <div class="webs__bg"></div> 
+                    <div class="webs__bg_3"></div> 
                 </li>
                 <li class="toggle-webs__5">
                     <div>
@@ -82,7 +82,7 @@
                         <span>Q’Maker</span>
                         </a>
                     </div>
-                    <div class="webs__bg"></div> 
+                    <div class="webs__bg_4"></div> 
                 </li>
                  <li class="toggle-webs__3">
                     <div>
@@ -92,7 +92,7 @@
                         <span>Point</span>
                         </a>
                     </div>
-                    <div class="webs__bg"></div> 
+                    <div class="webs__bg_5"></div> 
                 </li>
             </ul>
         </div>
@@ -128,7 +128,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
             </header>
@@ -170,15 +169,13 @@
                         <ul class="swiper-wrapper">
                             <li class="swiper-slide" v-for="(item,index) in resData.company" :key="index">
                                 <div class="life-routine__pic">
-                                    <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                        <img :src="getImgSrc(item.img)" alt="">
-                                    </a>
+                                    <router-link :to="{name:'partner', params: { id: item.index }}">
+                                        <img :src="getImgSrc(item.img)" alt=""></router-link>
                                 </div>
                                 <div class="life-routine-text">
                                     <div class="life-routine-text__title list__title">
-                                        <a href="https://qmaker.rapaq.com/partner/show/1"> 
-                                            {{item.title}}
-                                        </a>
+                                        <router-link :to="{name:'partner', params: { id: item.index }}">
+                                            {{item.title}}</router-link>
                                     </div>
                                     <div class="life-routine-text__intro">{{item.intro}}</div>
                                 </div>
@@ -187,7 +184,7 @@
                     </div>
                 </div>
             </section>
-            <section class="dream" style="background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/static/img/start.jpg')">
+            <section class="dream">
                 <div class="dream-wrap section-wrap">
                     <div class="dream__title title-w">
                         <span class="dreamword01">攜眾人之力</span>
@@ -210,6 +207,7 @@
         </div>
 </template>
 <script>
+import sf from "../../static/js/maker/custom.js";
 export default {
   name: "HelloWorld",
   data() {
@@ -241,75 +239,74 @@ export default {
       });
     },
     onHeadScroll() {
-        var _self = this
         var didScrollID = setTimer();
         this.didScrollID = didScrollID
-        var lastScrollTop = 0,
-            didScroll = false,
-            a = false,
-            b = false,
-            delta = 120,
-            Wheight = $(window).height(),
-            Wwidth = $(window).width();
-        $(window).resize(function() {
-            Wheight = $(window).height();
-            Wwidth = $(window).width();
-        });
-        function setTimer() {
-            var i = setInterval(function() {
+    var lastScrollTop = 0,
+        didScroll = false,
+        a = false,
+        b = false,
+        delta = 120,
+        Wheight = $(window).height(),
+        Wwidth = $(window).width();
+    $(window).resize(function () {
+        Wheight = $(window).height();
+        Wwidth = $(window).width();
+    });
+    function setTimer() {
+        var i = setInterval(function () {
             if (didScroll) {
                 hasScrolled();
                 didScroll = false;
             }
-            }, 500);
-            return i;
+        }, 500);
+        return i;
+    }
+    $(window).scroll(function (event) {
+        if (!a && !b) {
+            didScroll = true
         }
-         $(window).scroll(function(event) {
-             if(!a && !b){
-                 didScroll = true
-             }
-        });
-        function hasScrolled() {
-            var a = false
-            var b = false
-            clearInterval(didScrollID);
-            var st = $(window).scrollTop();
-            var $Tbottom = Wheight - 120;
-            if (st > lastScrollTop && st > Wheight) {
+    });
+    function hasScrolled() {
+        var a = false
+        var b = false
+        clearInterval(didScrollID);
+        var st = $(window).scrollTop();
+        var $Tbottom = Wheight - 120;
+        if (st > lastScrollTop && st > Wheight) {
             $(".nav")
                 .removeClass("is-active")
                 .addClass("is-hide");
             $(".nav-index").removeClass("nav-index--click");
-            } else {
+        } else {
             if (st < Wheight) {
                 $(".nav")
-                .removeClass("is-hide")
-                .addClass("is-active");
+                    .removeClass("is-hide")
+                    .addClass("is-active");
             } else if (st < $Tbottom) {
                 $(".nav")
-                .removeClass("is-hide")
-                .addClass("is-active");
+                    .removeClass("is-hide")
+                    .addClass("is-active");
                 $(".nav-index").removeClass("nav-index--click");
             }
-            }
-            if (st < $(".nav-content").height()) {
+        }
+        if (st < $(".nav-content").height()) {
             $(".nav-index").addClass("nav-index--click");
             $(".mainbar-aside-search input").removeClass("is--focus");
-            } else {
+        } else {
             $(".nav-index").removeClass("nav-index--click");
-            }
-
-            lastScrollTop = st;
-            didScrollID = setTimer();
         }
+
+        lastScrollTop = st;
+        didScrollID = setTimer();
+    }
     var $menuClick = $('.mainbar-aside__click'),
         $memberClick = $('.mainbar-aside-member'),
         $loginClick = $('.mainbar-aside-login'),
-        $menuContent =  $('.nav-content-toggle'),
-        $memberContent =  $('.nav-content-mtoggle'),
+        $menuContent = $('.nav-content-toggle'),
+        $memberContent = $('.nav-content-mtoggle'),
         $msg = $('.member__msg'),
         $mask = $('.mask');
-    function show_search(){
+    function show_search() {
         $mask.show();
         $mask.toggleClass("is--show");
         didScroll = false;
@@ -318,17 +315,17 @@ export default {
         $('.nav-index').removeClass("nav-index--click");
         $('.mainbar-aside-search input').addClass('is--focus');
     }
-    function hide_search(){
+    function hide_search() {
         $mask.hide();
-        $mask.removeClass("is--show"); 
+        $mask.removeClass("is--show");
         didScroll = true;
         a = false
         didScrollID = setTimer();
         $('.mainbar-aside-search input').removeClass('is--focus');
-        
+
     }
 
-    function show_member(){
+    function show_member() {
         $memberContent.stop(true, false).slideDown(200);
         $memberClick.toggleClass('is--mclick');
         $loginClick.toggleClass('is--mclick');
@@ -339,24 +336,25 @@ export default {
         clearInterval(didScrollID);
         $('.nav-index').removeClass("nav-index--click");
     }
-    function hide_member(){
-        console.log('yinchang')
+    function hide_member() {
+        
         $memberContent.stop(true, false).slideUp(200);
         $memberClick.removeClass('is--mclick');
         $loginClick.toggleClass('is--mclick');
         $msg.removeClass("is--hide");
         $mask.hide();
-        $mask.removeClass("is--show"); 
+        $mask.removeClass("is--show");
         didScroll = true;
         didScrollID = setTimer();
     }
-    
-    function show_menu(){
+
+    function show_menu() {
         console.log('show_menu')
         if (Wwidth <= 768) {
             $('.nav').toggleClass('is--absolute');
             $('.nav-content-mainbar').toggleClass('is--fixed add--z-index100');
             $('.mainbar__logo').toggleClass('is--fixed add--z-index100 add--background-color-fff');
+            $('.mainbar__logo').css('background-color','#fff')
             $('.mainbar-aside').toggleClass('is--fixed add--z-index100');
             $menuContent.toggleClass('add--z-index50');
             $('.wrapper-index, .wrapper-inner').toggleClass('is--zeroheight');
@@ -370,12 +368,13 @@ export default {
         clearInterval(didScrollID);
         $('.nav-index').removeClass("nav-index--click");
     }
-    function hide_menu(){
+    function hide_menu() {
         console.log('hide_menu')
         if (Wwidth <= 768) {
             $('.nav').removeClass('is--absolute');
             $('.nav-content-mainbar').removeClass('is--fixed add--z-index100');
             $('.mainbar__logo').removeClass('is--fixed add--z-index100 add--background-color-fff');
+            $('.mainbar__logo').css('background-color','transparent')
             $('.mainbar-aside').removeClass('is--fixed add--z-index100');
             $menuContent.removeClass('add--z-index50');
             $('.wrapper-index, .wrapper-inner').removeClass('is--zeroheight');
@@ -383,77 +382,76 @@ export default {
         $menuContent.stop(true, false).slideUp(200);
         $menuClick.removeClass("is--click");
         $mask.hide();
-        $mask.removeClass("is--show"); 
+        $mask.removeClass("is--show");
         didScroll = true;
         didScrollID = setTimer();
     }
-    $menuClick.bind('click',function(e){
+    $menuClick.bind('click', function (e) {
         hide_member();
         b = false;
-        if(!a){
+        if (!a) {
             show_menu();
             a = true;
-        }else{
+        } else {
             hide_menu();
             a = false;
         }
-        
     });
-    $memberClick.bind('click',function(e){
+    $memberClick.bind('click', function (e) {
         hide_menu();
         a = false;
-        if(!b){
+        if (!b) {
             show_member();
             b = true;
-        }else{
+        } else {
             hide_member();
             b = false;
         }
     });
-    $loginClick.bind('click',function(e){
+    $loginClick.bind('click', function (e) {
         console.log(1);
         console.log(b);
         hide_menu();
         a = false;
-        if(!b){
+        if (!b) {
             console.log(2);
             show_member();
             b = true;
-        }else{
+        } else {
             console.log(3);
             hide_member();
             b = false;
         }
-    });    
-    $mask.click(function(){
+    });
+    $mask.click(function () {
         hide_member();
         b = false;
         hide_menu();
         a = false;
     });
-    $(".mainbar-aside-search input").focus(function(){
+    $(".mainbar-aside-search input").focus(function () {
         hide_member();
         b = false;
         hide_menu();
         a = false;
         show_search();
     });
-    $(".mainbar-aside-search input").blur(function(){
+    $(".mainbar-aside-search input").blur(function () {
         hide_member();
         b = false;
         hide_menu();
         a = false;
         hide_search();
     });
-    $('.mainbar-aside-search .search__icon').on('click', function(){
+    $('.mainbar-aside-search .search__icon').on('click', function () {
         $mask.show();
-        if($('.mainbar-aside-search input').hasClass('is--focus')){
+        if ($('.mainbar-aside-search input').hasClass('is--focus')) {
             console.log('clicked');
-        }else{
+        } else {
             $('.nav-index').removeClass("nav-index--click");
             $('.mainbar-aside-search input').addClass('is--focus');
         }
-        
+
     });
     $(window).resize(function () {
         // hide_member();
@@ -461,9 +459,9 @@ export default {
         hide_menu();
         a = false;
         hide_search();
-        $menuContent.removeAttr( "style" );
-        $memberContent.removeAttr( "style" );
-        $('.nav, .nav-index, .nav-content-mainbar, .mainbar__logo, .mainbar-aside, .wrapper-index, .wrapper-inner').removeAttr( "style" );
+        $menuContent.removeAttr("style");
+        $memberContent.removeAttr("style");
+        $('.nav, .nav-index, .nav-content-mainbar, .mainbar__logo, .mainbar-aside, .wrapper-index, .wrapper-inner').removeAttr("style");
         $menuContent.removeClass('add--z-index50');
     });
 
@@ -502,7 +500,9 @@ export default {
       });
     }
   },
-  created() {},
+  created() {
+    console.log("this.didScrollID"+this.didScrollID)
+  },
   mounted() {
     this.getWeb();
     this.onHeadScroll();
@@ -521,6 +521,57 @@ export default {
 @import url("../../static/css/maker/layout.css");
 @import url("../../static/css/maker/QMaker.css");
 @import url("../../static/css/maker/swiper.css");
+
+
+  .webs__bg_1 {
+      background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: 100% auto;
+      margin-top: -120px;
+      filter: blur(5px);
+      height: 120px;
+    background-image: url("/static/img/rapaq.jpg");
+  }
+  
+   .webs__bg_2 {
+       background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: 100% auto;
+       margin-top: -120px;
+      filter: blur(5px);
+       height: 120px;
+    background-image: url("/static/img/qgoods.jpg"); 
+  }
+  
+   .webs__bg_3 {
+       background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: 100% auto;
+       margin-top: -120px;
+      filter: blur(5px);
+       height: 120px;
+    background-image: url("/static/img/point.jpg");
+  }
+  
+  .webs__bg_4 {
+      background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: 100% auto;
+      margin-top: -120px;
+      filter: blur(5px);
+      height: 120px;
+    background-image: url("../../static/img/qshare.jpg");
+  }
+  
+ .webs__bg_5 {
+     background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: 100% auto;
+     margin-top: -120px;
+      filter: blur(5px);
+     height: 120px;
+    background-image: url("../../static/img/qmaker.jpg");
+  }
 </style>
 <style>
 @import url("../../static/css/maker/sweetalert2.css");

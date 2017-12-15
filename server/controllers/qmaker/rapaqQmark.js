@@ -4,6 +4,7 @@ var cheerio = require('cheerio')
 var request = require('request')
 var db = require('../../models')
 var mkdirp = require('mkdirp');
+var g = require('../../global');
 var fc = ()=>{
     var options={
         "url":"https://qmaker.rapaq.com",
@@ -82,6 +83,7 @@ var fc = ()=>{
                 company['index'] = a_src.substring(a_src.lastIndexOf('/')+1,a_src.length)
                 company['img'] = data['factory'][idx]
                 data['company'][idx] = company
+                g.partner_count=idx
             });
             $('div.life-routine-text__intro').each(function (idx, element) {
                 var company = data['company'][idx]

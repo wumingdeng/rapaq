@@ -165,7 +165,7 @@
                     <div class="page-inner-author__pic"><img src="/static/img/headpic_100000233.jpg" alt=""></div>
                     <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                         <div class="page-inner-author__name" itemprop="name">RapaQ 創創</div>
-                    </span>
+                    </span>  
                     <div class="page-inner-author__status">創設計・找合夥</div>
                     <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
                         <meta itemprop="name" content="Rapaq 社群">
@@ -190,144 +190,45 @@
         <div id="scrolling-other">
             <div class="idxSection__main idxSection__main--action">
         <div class="idxList idxList--blog clearfix" style="min-width: 1080px;">
-            <!--<ul class="b-other-all" style="touch-action: pan-y;width: 1026px; transform: translate3d(-599px, 0px, 0px);"> -->
-            
-                            <li class="b-other-all-box">
+                <li class="b-other-all-box" v-for="(item,index) in html['b-other']" :key="index">
                     <div class="box__pic">
-                        <a href="https://qshare.rapaq.com/blog/show/101"><img src="https://lh3.googleusercontent.com/KPmrwhj6NSI9AOfOULtvZ6dL9szQiRhamNzrNjz-AKl2qYdbQ1SOY2M_11IfplF0s4iGY5uvY4KZH8CTT5LEdKlS=h420" alt="噴墨式太陽能電池板，讓 T恤、窗簾都可成為電力來源"></a>
+                        <router-link :to="{name:'blog', params: { id: item.blogId }}">
+                            <img :src="item['img']" :alt="item.title">
+                        </router-link>
                     </div>
                     <div class="box-author">
                         <a href="https://qshare.rapaq.com/member/index/100000047">
                             <div class="box-author__pic">
-                                <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000047.png" alt="">
+                                <img :src="item['img-author']">
                             </div>
                             <div class="box-author__name">
-                                Xunyu
+                                {{item['name-author']}}
                             </div>
                         </a>
                         <div class="box-author__date">
-                            2017年11月15日
+                             {{item.data}}
                         </div>
                     </div>
                     <div class="box__title">
-                        <a href="https://qshare.rapaq.com/blog/show/101">噴墨式太陽能電池板，讓 T恤、窗簾都可成為電力來源</a>
+                        <router-link :to="{name:'blog', params: { id: item.blogId }}">
+                        {{item.title}}
+                        </router-link>
                     </div>
                 </li>
-                            <li class="b-other-all-box">
-                    <div class="box__pic">
-                        <a href="https://qshare.rapaq.com/blog/show/97"><img src="https://lh3.googleusercontent.com/xySGhucwLWKPkuI7vylWvMV0jt1KfK7XIfHEowCR0SfXYQh_cITOU8PbtK81qddRpQvQSQorufZkk-NCzSD7x0jIsA=h420" alt="[創創集資] 索驥 - 智能音箱"></a>
-                    </div>
-                    <div class="box-author">
-                        <a href="https://qshare.rapaq.com/member/index/100000233">
-                            <div class="box-author__pic">
-                                <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000233.jpg" alt="">
-                            </div>
-                            <div class="box-author__name">
-                                RapaQ 創創
-                            </div>
-                        </a>
-                        <div class="box-author__date">
-                            2017年11月02日
-                        </div>
-                    </div>
-                    <div class="box__title">
-                        <a href="https://qshare.rapaq.com/blog/show/97">[創創集資] 索驥 - 智能音箱</a>
-                    </div>
-                </li>
-                            <li class="b-other-all-box">
-                    <div class="box__pic">
-                        <a href="https://qshare.rapaq.com/blog/show/96"><img src="https://lh3.googleusercontent.com/4NwDtpqsiUzi_1Y4jA5G4PSWH17lZCxUifF7Ee6itGm47VlbPmnX2gL_MgRp5xsKRRoKJovVfijvR80UMdicvHVMUQ=h420" alt="[創創集資] 你的第一件，享受聽覺的休閒服"></a>
-                    </div>
-                    <div class="box-author">
-                        <a href="https://qshare.rapaq.com/member/index/100000233">
-                            <div class="box-author__pic">
-                                <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000233.jpg" alt="">
-                            </div>
-                            <div class="box-author__name">
-                                RapaQ 創創
-                            </div>
-                        </a>
-                        <div class="box-author__date">
-                            2017年11月02日
-                        </div>
-                    </div>
-                    <div class="box__title">
-                        <a href="https://qshare.rapaq.com/blog/show/96">[創創集資] 你的第一件，享受聽覺的休閒服</a>
-                    </div>
-                </li>
-                            <li class="b-other-all-box">
-                    <div class="box__pic">
-                        <a href="https://qshare.rapaq.com/blog/show/94"><img src="https://lh3.googleusercontent.com/bQWDUVwx8lAu5J_1c6kUUzmQmDZyd8fsOc6JmCrEZK3miSnVxWVaAdISKwBAdRUJAqigyfDuXV9BxeuGDYdvc0K6=h420" alt="[創創集資] 用太陽充電，用背包補水－至誼享樂不斷電背包"></a>
-                    </div>
-                    <div class="box-author">
-                        <a href="https://qshare.rapaq.com/member/index/100000233">
-                            <div class="box-author__pic">
-                                <img src="https://storage.googleapis.com/rapaq_public/user_pic/headpic_100000233.jpg" alt="">
-                            </div>
-                            <div class="box-author__name">
-                                RapaQ 創創
-                            </div>
-                        </a>
-                        <div class="box-author__date">
-                            2017年11月02日
-                        </div>
-                    </div>
-                    <div class="box__title">
-                        <a href="https://qshare.rapaq.com/blog/show/94">[創創集資] 用太陽充電，用背包補水－至誼享樂不斷電背包</a>
-                    </div>
-                </li>
-                        <!--</ul>-->
         </div></div>
         </div>
     </div>
 </section>
 
-                        <footer class="footer">
-                <div class="footer-trigger">
-                    <ul class="footer-trigger__icon">
-                        <li class="trigger-top"></li>
-                        <li class="trigger-middle"></li>
-                        <li class="trigger-bottom"></li>
-                    </ul>
-                </div>
-                <div class="footer-line"></div>
-                <div class="footer-load loadbg--1">
-                    <div class="footer-content">
-	<div class="footer-content-platform">
-		<div class="platform__logo">
-		</div>
-		<ul class="platform-menu">
-			<li><a href="https://qshare.rapaq.com/index">首頁</a></li>
-			<li><a href="https://qshare.rapaq.com/works/index">作品</a></li>
-			<li><a href="https://qshare.rapaq.com/blog/index">文章</a></li>
-			<li><a href="https://qshare.rapaq.com/event/index">活動</a></li>
-			<li class="platform-menu__creat mc">創建</li>
-		</ul>
-	</div>
-	<div class="footer-content-common">
-		<ul class="common-company">
-			<li><a href="http://rapaq.com/" target="_blank">關於RAPAQ</a></li>
-			<li><a href="https://www.104.com.tw/jobbank/custjob/index.php?r=cust&amp;j=503a426b34363e6730323a63383e3619729292929415c366785j48&amp;jobsource=checkc" target="_blank">人才招募</a></li>
-			<li><a href="https://oauth.rapaq.com/privacy.html" target="_blank">隱私政策</a></li>
-			<li><a href="https://oauth.rapaq.com/terms.html" target="_blank">使用條款</a></li>
-			<li><a href="mailto:service@rapaq.com">聯絡我們</a></li>
-		</ul>
-	</div>
-</div>                </div>
-                <div class="footer-cy">
-                <ul class="footer-cy-content">
-    <li>© 2017 RAPAQ All Rights Reserved 版權所有</li>
-    </ul>
-
-                </div>
-            </footer>
+                   <cusfooter></cusfooter>
                     </div>
      
 </div>
 </template>
 
 <script>
-import sf from "../../static/js/blog/custom.js"
+import cusfooter from '../components/footer'
+import sf from "../../static/js/blog/custom.js";
 export default {
   data() {
     return {
@@ -337,6 +238,9 @@ export default {
       resData: {}
     };
   },
+   components:{
+	  	"cusfooter":cusfooter
+	  },
   methods: {
     getWeb(fb) {
       this.$store.dispatch("getBlogById", {
@@ -352,10 +256,10 @@ export default {
       console.log("onload");
     }
   },
-  	created() {
-			console.log('hehe?')
-			sf()
-		},
+  created() {
+    console.log("hehe?");
+    sf();
+  },
   mounted() {
     this.blogId = this.$route.params.id || 1;
     this.getWeb(() => {

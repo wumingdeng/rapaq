@@ -454,25 +454,6 @@
     text-align: center;
   }
   
-  .nav-content-toggle .toggle-webs .toggle-webs__1 .webs__bg {
-    background-image: url("../../static/img/rapaq.jpg");
-  }
-  
-  .nav-content-toggle .toggle-webs .toggle-webs__2 .webs__bg {
-    background-image: url("../../static/img/qgoods.jpg");
-  }
-  
-  .nav-content-toggle .toggle-webs .toggle-webs__3 .webs__bg {
-    background-image: url("../../static/img/point.jpg");
-  }
-  
-  .nav-content-toggle .toggle-webs .toggle-webs__4 .webs__bg {
-    background-image: url("../../static/img/qshare.jpg");
-  }
-  
-  .nav-content-toggle .toggle-webs .toggle-webs__5 .webs__bg {
-    background-image: url("../../static/img/qmaker.jpg");
-  }
   
   .nav-content-toggle .toggle-webs:after {
     clear: both;

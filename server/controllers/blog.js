@@ -23,7 +23,6 @@ var fc = ()=>{
                     if (!error && response.statusCode == 200) {
                         var $ = cheerio.load(body);
                         if($('title').text() === '此文章不存在'){
-                            console.log($('title').text())
                         }else{
                             utils.changeUrl($)
                             var data = {}
@@ -38,6 +37,18 @@ var fc = ()=>{
                                     return
                                 }
                             });
+                            data['b-other'] = []
+                            $('.b-other-all-box').each((idx,element)=>{
+                                var other = {}
+                                var href = $($(element).find('.box__pic a')[0]).attr('href')
+                                other['blogId'] = href.substring(href.lastIndexOf('/')+1,href.length)
+                                other['img']= $($(element).find('.box__pic img')[0]).attr('src')
+                                other['data']= $($(element).find('.box-author__date')[0]).text()
+                                other['title']= $($(element).find('.box__title')[0]).text()
+                                other['img-author']= $($(element).find('.box-author__pic')[0]).attr('src')
+                                other['name-author']= $($(element).find('.box-author__name')[0]).text()
+                                data['b-other'].push(other)
+                            })
                             console.log('writer database')
                             db.blog_pages.upsert({
                                 id:mid,content:JSON.stringify(data)

@@ -5,7 +5,7 @@ var request = require('request')
 var utils = require('../../utils')
 var qs = require('querystring'); 
 
-var getNum = 10 	//每次处理的条数
+var getNum = 20 	//每次处理的条数
 
 function getActivityData(first_id, isEnd) {
 	var data = {
@@ -30,7 +30,7 @@ function getActivityData(first_id, isEnd) {
     		return
     	}
     	var events = body.events
-    	console.log('a ha?')
+    	console.log('get activity data ' + body.data_num + ' row')
     	for (var i = 0; i < body.data_num; ++i) {
     		var event = events[i]
     		event.cover_image = utils.downloadRes(event.cover_image)

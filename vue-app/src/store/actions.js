@@ -88,6 +88,23 @@ export function getBlogById ({commit, state},data) {
       // onErrorRefresh(self);
     });
 }
+export function getPartnerById ({commit, state},data) {
+  var self = data.self;
+  self.$http.post(g.serverAddress+'/api/getPartnerById',data.info)
+    .then((response) => {
+      // success callback
+      if (data.callback) {
+        data.callback(self,response)
+      }
+      if(response.body.err){
+        // onErrorHandler(response.body.err)
+        // self.$f7.alert('',response.body.err)
+      }     
+    }, (response) => {
+      // error callback
+      // onErrorRefresh(self);
+    });
+}
 
 //取活动数据
 export function getActivity ({commit, state},data) {

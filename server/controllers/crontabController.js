@@ -3,12 +3,13 @@ var schedule = require('node-schedule');
 var moment = require('moment')
 var qmark = require('./qmaker/rapaqQmark.js');
 var blog = require('./blog.js');
+var partner = require('./partner.js');
 var qshare = require('./qshare/rapaqQshare.js')
 var activity = require('./qshare/rapaqActivity.js')
 
 
-// qshare()
-// qmark();
+qshare()
+qmark();
 activity(0);
 
 // getRapaqWeb();
@@ -26,8 +27,8 @@ var rule1     = new schedule.RecurrenceRule();
 var times1    = [0,30];  
 rule1.minute  = times1; 
 var getBlog = schedule.scheduleJob(rule1, function(){
-    console.log("getBlog:"+moment().format('YYYY-MM-DD HH:mm:ss'))
     blog();
+    partner();
 })
 
 var rule2 = "0 * * * * *"
@@ -35,6 +36,5 @@ var getWeb = schedule.scheduleJob(rule2, function(){
     console.log(moment().format('YYYY-MM-DD HH:mm:ss'))
     qshare()
     qmark();
-    blog(95);
 })
 module.exports = schedule

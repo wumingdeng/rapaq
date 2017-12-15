@@ -65,7 +65,4 @@ var fc = ()=>{
         }
     })
 }
-
-fc();
-
 module.exports = fc

@@ -28,6 +28,16 @@ web_router.route('/getBlogById').post(function (req, res) {
 	})
 })
 
+web_router.route('/getPartnerById').post(function (req, res) {
+	var idx =  req.body.id;
+	console.log("partner:"+idx)
+	db.partner_pages.findOne({where: {id: idx}}).then(function(data) {
+		if(data){
+			res.send(JSON.parse(data.content))
+		}
+	})
+})
+
 var http = require('http')
 var https = require('https')
 

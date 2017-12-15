@@ -7,7 +7,7 @@
         <div class="nav-content-mainbar" style='top:0px'>
             <div class="mainbar__logo" style="background-color: transparent">
                 <a href="/">
-                    <div class="mainbar__logo__logo" ></div>
+                    <div class="mainbar__logo__logo"  style='display: block;'></div>
                 </a>
             </div>
             <div class="mainbar-aside">

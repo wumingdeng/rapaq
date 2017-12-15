@@ -41,3 +41,7 @@ var server = app.listen(g.cfg.listen, function () {
   require('./controllers/crontabController.js')
   console.log('Example app listening at http://%s:%s', host, port);
 });
+
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});

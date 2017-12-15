@@ -7,11 +7,12 @@ var db = require('../models')
 var mkdirp = require('mkdirp');
 var utils = require('../utils')
 var fc = () => {
-    var count = g.partner_count || 1
-    console.log(count)
-    while (count > 0) {
+    var count = g.partner_count || 14
+    getWeb(count)
+    function getWeb(mid){
+        if(mid === 0) return 
         var options = {
-            "url": "https://qmaker.rapaq.com/partner/show/" + count,
+            "url": "https://qmaker.rapaq.com/partner/show/" + mid,
             "method": "get"
         }
         request(options, function (error, response, body) {
@@ -24,10 +25,23 @@ var fc = () => {
                     var data = {}
                     data['f-header-focus__name'] = $('.f-header-focus__name').text()
                     data['f-about__text'] = $('.f-about__text').text()
+                    data['f-header-focus__pic'] = g.cfg.host+'/img/partner/'+mid+'.png'
+                    fs.stat('./public/img/partner/'+ mid+'.png', (err, stats) => {
+                        if (err) {
+                            request('https://qmaker.rapaq.com/img/logo/'+mid+'.png',(err)=>{
+                                if(err){
+                                    console.log("partner error:"+error)
+                                    return
+                                }
+                            }).on('error',(err)=>{
+                                console.log("partner error:"+err)
+                            }).pipe(fs.createWriteStream('./public/img/partner/'+ mid+'.png'));
+                        }
+                    })
                     data['infos'] = []
                     $('.f-goods-recommend-list').children().each(function (idx, element) {
                         var info = {}
-                        info['info-pic__pic'] = $(element).find('.info__name').css('background-image')
+                        info['info-pic__pic'] = $(element).find('.info-pic__pic').css('background-image')
                         info['info__name'] = $(element).find('.info__name').text()
                         info['info__store'] = $(element).find('.info__store').text()
                         info['info__price'] = $(element).find('.info__price').text()
@@ -36,19 +50,21 @@ var fc = () => {
                         info['produceId'] = info_href.substring(info_href.lastIndexOf('/')+1,info_href.length)
                         info['storeId'] = store_href.substring(store_href.lastIndexOf('/')+1,store_href.length)
                         data['infos'].push(info)
-                    });
-                    db.blog_pages.upsert({
+                    }); 
+                    console.log(mid)
+                    db.partner_pages.upsert({
                         id: mid, content: JSON.stringify(data)
                     })
+                    mid--
+                    getWeb(mid)
                 }
             } else {
                 console.log(error)
             }
         })
-        count--
     }
 }
 
-fc();
+// fc();
 
 module.exports = fc

@@ -27,7 +27,7 @@ var shareFun = {
             $(".footer-load").slideToggle(500);
             $(".footer-trigger__icon").toggleClass("is--active");
         });
-        
+
         this.divFixTop = $('.classify, [data-id="js-pageHeader"], .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage');
         this.divFixZero = $('.classify, .whitebg, [data-id="js-pageHeader"], .n-notify__title, .s-switch, .m-switch, .m-main-save-switch, .claim-inPage');
         this.easyElTop = $(".pageEasy-header-infoMove, .pageEasy-header__action");//
@@ -36,7 +36,7 @@ var shareFun = {
 
         this.idScroll = false
     },
-    initSharePage() {
+    initSharePage:function() {
         $(window).on('scroll',this.onScroll.bind(this));
     },
     onScroll:function() {
@@ -134,7 +134,7 @@ var shareFun = {
         this.didScrollID = this.setTimer();
     },
 
-    initClassify() {
+    initClassify:function() {
         //classify effect
         function classifyCheck(){
             if ( !clickONE && !clickTWO && !clickTHREE) {

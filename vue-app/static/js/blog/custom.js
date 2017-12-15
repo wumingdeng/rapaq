@@ -436,13 +436,6 @@ var fc = function(){
     });
 
 
-    $(function () {
-        $('.footer-trigger').click(function(){
-            $(".footer-load").slideToggle(500);
-            $(".footer-trigger__icon").toggleClass("is--active");
-        });
-    });
-
     $("body").on('click', '.check-report', function () {
         $('.report__submit').removeClass('is--disable');
     });

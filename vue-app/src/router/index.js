@@ -5,6 +5,7 @@ import Share from '@/view/qshare/sharePage'
 import Goods from '@/view/Goods'
 import Maker from '@/view/Maker'
 import Blog from '@/view/blog'
+import Partner from '@/view/partner'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
     	path: '/blog:id',
     	name: "blog",
     	component: Blog
+    },
+    {
+    	path: '/partner:id',
+    	name: "partner",
+    	component: Partner
     }
   ]
 })

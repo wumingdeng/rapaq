@@ -35,6 +35,9 @@ utils.changeUrl = function($) {
 }
 
 utils.downloadRes = function(imgUrl, useProxy) {
+	if (cfg.debug) {
+		return imgUrl
+	}
 	if (useProxy == undefined) {
 		useProxy = true //默认使用代理
 	}
@@ -58,7 +61,7 @@ utils.downloadRes = function(imgUrl, useProxy) {
   //判断文件是否存在
   fs.exists(fullPath, function(exists) {  
   	if (exists) {
-	    console.log('文件存在');  
+	    // console.log('文件存在');  
 	  	return
 	  } else {
 	  	var opt = {
@@ -80,6 +83,8 @@ utils.downloadRes = function(imgUrl, useProxy) {
 		    		console.log(error)
 		    		return
 		    	}
+		    }).on('error', function(err) {
+		    	console.log(err)
 		    }).pipe(fs.createWriteStream(fullPath));
 		  });
 

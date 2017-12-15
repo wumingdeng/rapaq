@@ -106,6 +106,7 @@
 		created() {
 			console.log('hehe?')
 			sf.init()
+			sf.initSharePage()
 		},
 		mounted() {
 			console.log('mounted...')
@@ -129,4 +130,5 @@
 	@import url('../../../static/css/share/helper.css');
 	@import url('../../../static/css/share/works.css');
 	@import url('../../../static/css/share/index.css');
+	@import url('../../../static/css/share/classify.css');
 </style>

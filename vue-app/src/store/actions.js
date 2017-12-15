@@ -88,3 +88,42 @@ export function getBlogById ({commit, state},data) {
       // onErrorRefresh(self);
     });
 }
+
+//取活动数据
+export function getActivity ({commit, state},data) {
+  var self = data.self;
+  self.$http.post(g.serverAddress+'/api/getActivity',data.info)
+    .then((response) => {
+      // success callback
+      console.log(response)
+      if (data.callback) {
+        data.callback(self,response)
+      }
+      if(response.body.err){
+        // onErrorHandler(response.body.err)
+        // self.$f7.alert('',response.body.err)
+      }     
+    }, (response) => {
+      // error callback
+      // onErrorRefresh(self);
+    });
+}
+//取活动数据
+export function getActivityById ({commit, state},data) {
+  var self = data.self;
+  self.$http.post(g.serverAddress+'/api/getActivityById',data.info)
+    .then((response) => {
+      // success callback
+      console.log(response)
+      if (data.callback) {
+        data.callback(self,response)
+      }
+      if(response.body.err){
+        // onErrorHandler(response.body.err)
+        // self.$f7.alert('',response.body.err)
+      }     
+    }, (response) => {
+      // error callback
+      // onErrorRefresh(self);
+    });
+}

@@ -42,7 +42,8 @@
         </div>
       </div>
       <div class="idxSection__action">
-        <a href="https://qshare.rapaq.com/event/index" class="btn btn--idx btn--main btn--arrow">更多活動</a>
+        <router-link to="/activity" class="btn btn--idx btn--main btn--arrow">更多活動</router-link>
+        <!-- <a href="https://qshare.rapaq.com/event/index" class="btn btn--idx btn--main btn--arrow">更多活動</a> -->
       </div>
     </div>
   </div>

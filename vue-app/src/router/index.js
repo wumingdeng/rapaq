@@ -6,6 +6,8 @@ import Goods from '@/view/Goods'
 import Maker from '@/view/Maker'
 import Blog from '@/view/blog'
 import Partner from '@/view/partner'
+import Activity from '@/view/qshare/activity/activity'
+import ActivityShow from '@/view/qshare/activity/activityShow'
 
 Vue.use(Router)
 
@@ -40,6 +42,16 @@ export default new Router({
     	path: '/partner:id',
     	name: "partner",
     	component: Partner
+    },
+    {
+        path: '/activity',
+        name: "Activity",
+        component: Activity
+    },
+    {
+    	path: '/activityShow',
+    	name: "ActivityShow",
+    	component: ActivityShow
     }
   ]
 })

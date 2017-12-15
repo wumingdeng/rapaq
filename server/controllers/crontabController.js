@@ -4,9 +4,12 @@ var moment = require('moment')
 var qmark = require('./qmaker/rapaqQmark.js');
 var blog = require('./blog.js');
 var qshare = require('./qshare/rapaqQshare.js')
+var activity = require('./qshare/rapaqActivity.js')
+
 
 // qshare()
 // qmark();
+activity(0);
 
 // getRapaqWeb();
 //每天3点把超过一天未支付的订单变成自动取消的状态
@@ -30,8 +33,8 @@ var getBlog = schedule.scheduleJob(rule1, function(){
 var rule2 = "0 * * * * *"
 var getWeb = schedule.scheduleJob(rule2, function(){
     console.log(moment().format('YYYY-MM-DD HH:mm:ss'))
-    // qshare()
-    // qmark();
-    // blog(95);
+    qshare()
+    qmark();
+    blog(95);
 })
 module.exports = schedule

@@ -4,7 +4,8 @@
 
 module.exports={
     // User:require('./user'),
-    Web:require('./web')
+    Web:require('./web'),
+    Activity: require('./activity')
     // Comments:require('./comments'),
     // Addons:require('./addon'),
 }

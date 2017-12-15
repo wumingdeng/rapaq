@@ -14,9 +14,9 @@ var sequelize = new Sequelize(config.dbname, config.user, config.pass, {
   port:config.port,
   timezone:'+08:00',
   dialect: config.dialect,
-  dialectOptions: {
-     charset: 'utf8mb4'
-  },
+  // dialectOptions: {
+  //    charset: 'utf8mb4'
+  // },
   pool: {
     max: config.poolsize,
     min: 0,

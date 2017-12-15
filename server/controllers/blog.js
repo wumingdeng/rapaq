@@ -1,7 +1,7 @@
 
 var cheerio = require('cheerio')
 var request = require('request')
-var g = require('./global')
+var g = require('../global')
 var fs = require('fs')
 var db = require('../models')
 var mkdirp = require('mkdirp');
@@ -57,6 +57,6 @@ var fc = (blogId)=>{
     })
 }
 
-fc(95);
+// fc(95);
 
 module.exports = fc

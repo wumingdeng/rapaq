@@ -6,7 +6,9 @@ import router from './router'
 import store from './store'
 // import $ from 'jquery'
 require('../static/js/share/index-helper.js')
-// require('../static/js/common.js')
+
+import itemslide from 'itemslide'
+console.log(itemslide)
 
 
 import VueResource from 'vue-resource'
